@@ -1,0 +1,18 @@
+Tecnologias e Arquitetura
+
+O backend foi desenhado seguindo os princípios da Clean Architecture (Arquitetura Limpa) e Domain-Driven Design (DDD).  API e Domínio: .NET 10.0 (C#).  Persistência: PostgreSQL via Entity Framework Core.Design Patterns: Strategy (para regras de descontos) e Value Objects (para validação de períodos temporais).  Frontend Integrado: Node.js.
+
+Comandos para Iniciar o Projeto
+1. Limpeza e Compilação
+
+dotnet clean
+dotnet build
+
+2. Criação do Banco de Dados
+
+dotnet tool install --global dotnet-ef  
+dotnet ef database update --project src/DiariasRO.Infrastructure --startup-project src/DiariasRO.Api
+
+3. Execução da API
+
+dotnet watch run --project src/DiariasRO.Api

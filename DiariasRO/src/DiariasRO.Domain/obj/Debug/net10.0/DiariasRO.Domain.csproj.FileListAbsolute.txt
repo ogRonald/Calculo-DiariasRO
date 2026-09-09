@@ -1,0 +1,11 @@
+C:\cal-diarias\DiariasRO\src\DiariasRO.Domain\bin\Debug\net10.0\DiariasRO.Domain.deps.json
+C:\cal-diarias\DiariasRO\src\DiariasRO.Domain\bin\Debug\net10.0\DiariasRO.Domain.dll
+C:\cal-diarias\DiariasRO\src\DiariasRO.Domain\bin\Debug\net10.0\DiariasRO.Domain.pdb
+C:\cal-diarias\DiariasRO\src\DiariasRO.Domain\obj\Debug\net10.0\DiariasRO.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\cal-diarias\DiariasRO\src\DiariasRO.Domain\obj\Debug\net10.0\DiariasRO.Domain.AssemblyInfoInputs.cache
+C:\cal-diarias\DiariasRO\src\DiariasRO.Domain\obj\Debug\net10.0\DiariasRO.Domain.AssemblyInfo.cs
+C:\cal-diarias\DiariasRO\src\DiariasRO.Domain\obj\Debug\net10.0\DiariasRO.Domain.csproj.CoreCompileInputs.cache
+C:\cal-diarias\DiariasRO\src\DiariasRO.Domain\obj\Debug\net10.0\DiariasRO.Domain.dll
+C:\cal-diarias\DiariasRO\src\DiariasRO.Domain\obj\Debug\net10.0\refint\DiariasRO.Domain.dll
+C:\cal-diarias\DiariasRO\src\DiariasRO.Domain\obj\Debug\net10.0\DiariasRO.Domain.pdb
+C:\cal-diarias\DiariasRO\src\DiariasRO.Domain\obj\Debug\net10.0\ref\DiariasRO.Domain.dll
