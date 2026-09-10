@@ -7,18 +7,18 @@ export default function CalculadoraDiarias() {
 
   // 1. Estado apenas com dados do solicitante e parâmetros da API
   const [formData, setFormData] = useState({
-    servidor: '',
-    matricula: '',
+    servidor: 'Nome',
+    matricula: '000.000-0',
     orgao: '',
-    destino: '',
+    destino: 'Cidade',
     categoria: 4,
-    tipo: 0,
+    tipo: 2, // Inicia como Estadual (2)
     dataHoraInicio: '',
     dataHoraFim: '',
     tipoRegra: 'Padrao',
     cotacaoDolar: '',
     hospedagemInclusa: false,
-    custosTotaisTerceiros: false,
+    custosTotaisTerceiros: false
   });
 
   // 2. Estados para armazenar a resposta do Backend
@@ -29,17 +29,20 @@ export default function CalculadoraDiarias() {
   const handleCalcular = async () => {
     setErroValidacao(null);
     
-    // 1. VALIDAÇÃO ANTES DE ENVIAR PARA O C#
+    // Validação antes de enviar
     if (!formData.dataHoraInicio || !formData.dataHoraFim) {
       setErroValidacao("Por favor, preencha as datas de início e fim da viagem.");
       return;
     }
 
+    // Tradução: Se for Estadual (2), a API calcula usando a tabela Nacional (0)
+    const tipoParaApi = Number(formData.tipo) === 2 ? 0 : Number(formData.tipo);
+
     const payload = {
       categoria: Number(formData.categoria),
       dataHoraInicio: formData.dataHoraInicio,
       dataHoraFim: formData.dataHoraFim,
-      tipo: Number(formData.tipo),
+      tipo: tipoParaApi,
       cotacaoDolar: formData.cotacaoDolar ? Number(formData.cotacaoDolar) : null,
       hospedagemInclusa: formData.hospedagemInclusa,
       custosTotaisTerceiros: formData.custosTotaisTerceiros,
@@ -63,7 +66,6 @@ export default function CalculadoraDiarias() {
 
   return (
     <div className="min-h-screen bg-slate-100 text-slate-800 font-sans">
-      {/* Cabeçalho */}
       <header className="bg-[#0F2C59] text-white p-4 shadow-md border-b-4 border-[#059669]">
         <div className="max-w-5xl mx-auto flex justify-between items-center">
           <div className="flex items-center space-x-3">
@@ -71,12 +73,8 @@ export default function CalculadoraDiarias() {
               RO
             </div>
             <div>
-              <h1 className="font-bold text-lg sm:text-xl leading-tight">
-                Governo do Estado de Rondônia
-              </h1>
-              <p className="text-xs text-slate-300">
-                Sistema de Calculadora de Diárias de Viagem
-              </p>
+              <h1 className="font-bold text-lg sm:text-xl leading-tight">Governo do Estado de Rondônia</h1>
+              <p className="text-xs text-slate-300">Sistema de Calculadora de Diárias de Viagem</p>
             </div>
           </div>
           <span className="hidden sm:inline-block text-xs bg-[#059669] text-white px-3 py-1 rounded-full font-medium">
@@ -85,9 +83,7 @@ export default function CalculadoraDiarias() {
         </div>
       </header>
 
-      {/* Container Principal */}
       <main className="max-w-5xl mx-auto p-4 sm:p-6">
-        {/* Navegação */}
         <div className="flex border-b border-slate-300 mb-6 bg-white rounded-t-lg shadow-sm overflow-x-auto">
           <button
             onClick={() => setActiveTab('form')}
@@ -115,17 +111,13 @@ export default function CalculadoraDiarias() {
           </button>
         </div>
 
-        {/* TELA 1: FORMULÁRIO */}
         {activeTab === 'form' && (
           <div className="bg-white p-6 rounded-lg shadow-sm border border-slate-200">
             <div className="border-b pb-4 mb-6">
               <h2 className="text-xl font-bold text-[#0F2C59]">Preencha os Dados do Cálculo</h2>
-              <p className="text-sm text-slate-500">
-                Informe os dados do servidor e os parâmetros da viagem (Decreto N.º 18.728/2014). O sistema calculará as diárias automaticamente.
-              </p>
+              <p className="text-sm text-slate-500">Informe os dados do servidor e os parâmetros da viagem. O sistema calculará automaticamente.</p>
             </div>
 
-            {/* Exibição de Erros de Regra de Negócio (Travas do Backend) */}
             {erroValidacao && (
               <div className="mb-6 p-4 bg-red-50 border-l-4 border-red-600 text-red-700 text-sm font-medium rounded-r-md">
                 Atenção: {erroValidacao}
@@ -133,7 +125,6 @@ export default function CalculadoraDiarias() {
             )}
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {/* Dados do Servidor */}
               <div>
                 <label className="block text-sm font-medium text-slate-700 mb-1">Nome Completo</label>
                 <input
@@ -174,7 +165,6 @@ export default function CalculadoraDiarias() {
                 />
               </div>
 
-              {/* Parâmetros para API */}
               <div>
                 <label className="block text-sm font-medium text-slate-700 mb-1">Categoria do Cargo</label>
                 <select
@@ -190,13 +180,14 @@ export default function CalculadoraDiarias() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-slate-700 mb-1">Tipo de Viagem</label>
+                <label className="block text-sm font-medium text-slate-700 mb-1">Abrangência da Viagem</label>
                 <select
                   value={formData.tipo}
                   onChange={(e) => setFormData({ ...formData, tipo: Number(e.target.value) })}
                   className="w-full p-2.5 border border-slate-300 rounded-md focus:ring-2 focus:ring-[#059669] focus:outline-none bg-white"
                 >
-                  <option value={0}>Nacional</option>
+                  <option value={2}>Estadual (Dentro de Rondônia)</option>
+                  <option value={0}>Nacional (Para fora do Estado)</option>
                   <option value={1}>Internacional</option>
                 </select>
               </div>
@@ -250,7 +241,6 @@ export default function CalculadoraDiarias() {
               )}
             </div>
 
-            {/* Travas de Custeio */}
             <div className="mt-6 pt-4 border-t">
               <h3 className="text-sm font-semibold text-slate-700 mb-3">Custos e Hospedagem (Travas Legais)</h3>
               <div className="flex flex-col gap-3">
@@ -286,7 +276,6 @@ export default function CalculadoraDiarias() {
           </div>
         )}
 
-        {/* TELA 2: DEMONSTRATIVO */}
         {activeTab === 'statement' && resultadoCalculo && (
           <div className="bg-white p-6 rounded-lg shadow-sm border border-slate-200">
             <div className="flex justify-between items-start border-b pb-4 mb-6">
@@ -300,6 +289,16 @@ export default function CalculadoraDiarias() {
               <p><strong className="text-slate-700">Servidor:</strong> {formData.servidor} (Matrícula: {formData.matricula})</p>
               <p><strong className="text-slate-700">Órgão:</strong> {formData.orgao}</p>
               <p><strong className="text-slate-700">Destino:</strong> {formData.destino}</p>
+              <p>
+                <strong className="text-slate-700">Abrangência Legal:</strong>{' '}
+                {formData.tipo === 1 ? (
+                  <span className="text-amber-600 font-semibold">Internacional (Requer aprovação do Executivo)</span>
+                ) : formData.tipo === 0 ? (
+                  <span className="text-amber-600 font-semibold">Nacional - Interestadual (Requer aprovação do Executivo)</span>
+                ) : (
+                  <span className="text-[#059669] font-semibold">Estadual (Autorização do Ordenador de Despesas)</span>
+                )}
+              </p>
             </div>
 
             <div className="overflow-x-auto mb-6">
@@ -347,7 +346,6 @@ export default function CalculadoraDiarias() {
           </div>
         )}
 
-        {/* TELA 3: HISTÓRICO */}
         {activeTab === 'history' && (
           <div className="bg-white p-6 rounded-lg shadow-sm border border-slate-200">
             <div className="border-b pb-4 mb-6">
@@ -380,18 +378,7 @@ export default function CalculadoraDiarias() {
                       </td>
                     </tr>
                   )}
-                  {/* Dados fixos de demonstração */}
-                  <tr>
-                    <td className="p-3 font-medium">Carlos Eduardo</td>
-                    <td className="p-3">Cacoal - RO</td>
-                    <td className="p-3">2 d</td>
-                    <td className="p-3 text-right font-semibold">R$ 890.00</td>
-                    <td className="p-3 text-center">
-                      <span className="bg-blue-100 text-blue-800 text-xs px-2.5 py-1 rounded-full font-medium">
-                        Aprovado
-                      </span>
-                    </td>
-                  </tr>
+                  
                 </tbody>
               </table>
             </div>

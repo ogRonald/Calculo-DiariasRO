@@ -9,3 +9,4 @@ C:\cal-diarias\DiariasRO\src\DiariasRO.Domain\obj\Debug\net10.0\DiariasRO.Domain
 C:\cal-diarias\DiariasRO\src\DiariasRO.Domain\obj\Debug\net10.0\refint\DiariasRO.Domain.dll
 C:\cal-diarias\DiariasRO\src\DiariasRO.Domain\obj\Debug\net10.0\DiariasRO.Domain.pdb
 C:\cal-diarias\DiariasRO\src\DiariasRO.Domain\obj\Debug\net10.0\ref\DiariasRO.Domain.dll
+C:\cal-diarias\DiariasRO\src\DiariasRO.Domain\obj\Debug\net10.0\DiariasRO.Domain.sourcelink.json
