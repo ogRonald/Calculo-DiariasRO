@@ -1,0 +1,33 @@
+F:\Mod\Projeto Diarias\DiariasRO_com_perfil_historico_editavel\DiariasRO\src\DiariasRO.Domain\bin\Debug\net10.0\DiariasRO.Domain.deps.json
+F:\Mod\Projeto Diarias\DiariasRO_com_perfil_historico_editavel\DiariasRO\src\DiariasRO.Domain\bin\Debug\net10.0\DiariasRO.Domain.dll
+F:\Mod\Projeto Diarias\DiariasRO_com_perfil_historico_editavel\DiariasRO\src\DiariasRO.Domain\bin\Debug\net10.0\DiariasRO.Domain.pdb
+F:\Mod\Projeto Diarias\DiariasRO_com_perfil_historico_editavel\DiariasRO\src\DiariasRO.Domain\obj\Debug\net10.0\DiariasRO.Domain.GeneratedMSBuildEditorConfig.editorconfig
+F:\Mod\Projeto Diarias\DiariasRO_com_perfil_historico_editavel\DiariasRO\src\DiariasRO.Domain\obj\Debug\net10.0\DiariasRO.Domain.AssemblyInfoInputs.cache
+F:\Mod\Projeto Diarias\DiariasRO_com_perfil_historico_editavel\DiariasRO\src\DiariasRO.Domain\obj\Debug\net10.0\DiariasRO.Domain.AssemblyInfo.cs
+F:\Mod\Projeto Diarias\DiariasRO_com_perfil_historico_editavel\DiariasRO\src\DiariasRO.Domain\obj\Debug\net10.0\DiariasRO.Domain.csproj.CoreCompileInputs.cache
+F:\Mod\Projeto Diarias\DiariasRO_com_perfil_historico_editavel\DiariasRO\src\DiariasRO.Domain\obj\Debug\net10.0\DiariasRO.Domain.dll
+F:\Mod\Projeto Diarias\DiariasRO_com_perfil_historico_editavel\DiariasRO\src\DiariasRO.Domain\obj\Debug\net10.0\refint\DiariasRO.Domain.dll
+F:\Mod\Projeto Diarias\DiariasRO_com_perfil_historico_editavel\DiariasRO\src\DiariasRO.Domain\obj\Debug\net10.0\DiariasRO.Domain.pdb
+F:\Mod\Projeto Diarias\DiariasRO_com_perfil_historico_editavel\DiariasRO\src\DiariasRO.Domain\obj\Debug\net10.0\ref\DiariasRO.Domain.dll
+F:\Mod\Projeto Diarias\DiariasRO\src\DiariasRO.Domain\bin\Debug\net10.0\DiariasRO.Domain.deps.json
+F:\Mod\Projeto Diarias\DiariasRO\src\DiariasRO.Domain\bin\Debug\net10.0\DiariasRO.Domain.dll
+F:\Mod\Projeto Diarias\DiariasRO\src\DiariasRO.Domain\bin\Debug\net10.0\DiariasRO.Domain.pdb
+F:\Mod\Projeto Diarias\DiariasRO\src\DiariasRO.Domain\obj\Debug\net10.0\DiariasRO.Domain.GeneratedMSBuildEditorConfig.editorconfig
+F:\Mod\Projeto Diarias\DiariasRO\src\DiariasRO.Domain\obj\Debug\net10.0\DiariasRO.Domain.AssemblyInfoInputs.cache
+F:\Mod\Projeto Diarias\DiariasRO\src\DiariasRO.Domain\obj\Debug\net10.0\DiariasRO.Domain.AssemblyInfo.cs
+F:\Mod\Projeto Diarias\DiariasRO\src\DiariasRO.Domain\obj\Debug\net10.0\DiariasRO.Domain.csproj.CoreCompileInputs.cache
+F:\Mod\Projeto Diarias\DiariasRO\src\DiariasRO.Domain\obj\Debug\net10.0\DiariasRO.Domain.dll
+F:\Mod\Projeto Diarias\DiariasRO\src\DiariasRO.Domain\obj\Debug\net10.0\refint\DiariasRO.Domain.dll
+F:\Mod\Projeto Diarias\DiariasRO\src\DiariasRO.Domain\obj\Debug\net10.0\DiariasRO.Domain.pdb
+F:\Mod\Projeto Diarias\DiariasRO\src\DiariasRO.Domain\obj\Debug\net10.0\ref\DiariasRO.Domain.dll
+C:\Users\03478537223\DiariasRO\src\DiariasRO.Domain\bin\Debug\net10.0\DiariasRO.Domain.deps.json
+C:\Users\03478537223\DiariasRO\src\DiariasRO.Domain\bin\Debug\net10.0\DiariasRO.Domain.dll
+C:\Users\03478537223\DiariasRO\src\DiariasRO.Domain\bin\Debug\net10.0\DiariasRO.Domain.pdb
+C:\Users\03478537223\DiariasRO\src\DiariasRO.Domain\obj\Debug\net10.0\DiariasRO.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\03478537223\DiariasRO\src\DiariasRO.Domain\obj\Debug\net10.0\DiariasRO.Domain.AssemblyInfoInputs.cache
+C:\Users\03478537223\DiariasRO\src\DiariasRO.Domain\obj\Debug\net10.0\DiariasRO.Domain.AssemblyInfo.cs
+C:\Users\03478537223\DiariasRO\src\DiariasRO.Domain\obj\Debug\net10.0\DiariasRO.Domain.csproj.CoreCompileInputs.cache
+C:\Users\03478537223\DiariasRO\src\DiariasRO.Domain\obj\Debug\net10.0\DiariasRO.Domain.dll
+C:\Users\03478537223\DiariasRO\src\DiariasRO.Domain\obj\Debug\net10.0\refint\DiariasRO.Domain.dll
+C:\Users\03478537223\DiariasRO\src\DiariasRO.Domain\obj\Debug\net10.0\DiariasRO.Domain.pdb
+C:\Users\03478537223\DiariasRO\src\DiariasRO.Domain\obj\Debug\net10.0\ref\DiariasRO.Domain.dll

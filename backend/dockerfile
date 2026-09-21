@@ -1,0 +1,26 @@
+FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
+WORKDIR /app
+
+# Copia a solução
+COPY *.sln .
+
+# Copia os arquivos de projeto (ajuste os nomes se tiver outras pastas no src)
+COPY src/DiariasRO.api/*.csproj ./src/DiariasRO.api/
+COPY src/DiariasRO.Domain/*.csproj ./src/DiariasRO.Domain/
+
+# Restaura as dependências
+RUN dotnet restore "src/DiariasRO.api/DiariasRO.api.csproj"
+
+# Copia todo o resto do código
+COPY src/ ./src/
+
+# Publica a aplicação
+RUN dotnet publish src/DiariasRO.api/DiariasRO.api.csproj -c Release -o /out
+
+# Imagem de produção (mais leve)
+FROM mcr.microsoft.com/dotnet/aspnet:10.0
+WORKDIR /app
+COPY --from=build /out .
+
+EXPOSE 8080
+ENTRYPOINT ["dotnet", "DiariasRO.api.dll"]

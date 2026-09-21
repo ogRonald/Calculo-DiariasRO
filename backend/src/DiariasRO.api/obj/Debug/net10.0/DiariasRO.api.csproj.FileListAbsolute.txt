@@ -1,0 +1,207 @@
+F:\Mod\Projeto Diarias\DiariasRO_com_perfil_historico_editavel\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\appsettings.Development.json
+F:\Mod\Projeto Diarias\DiariasRO_com_perfil_historico_editavel\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\appsettings.json
+F:\Mod\Projeto Diarias\DiariasRO_com_perfil_historico_editavel\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\DiariasRO.Api.staticwebassets.endpoints.json
+F:\Mod\Projeto Diarias\DiariasRO_com_perfil_historico_editavel\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\DiariasRO.Api.exe
+F:\Mod\Projeto Diarias\DiariasRO_com_perfil_historico_editavel\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\DiariasRO.Api.deps.json
+F:\Mod\Projeto Diarias\DiariasRO_com_perfil_historico_editavel\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\DiariasRO.Api.runtimeconfig.json
+F:\Mod\Projeto Diarias\DiariasRO_com_perfil_historico_editavel\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\DiariasRO.Api.dll
+F:\Mod\Projeto Diarias\DiariasRO_com_perfil_historico_editavel\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\DiariasRO.Api.pdb
+F:\Mod\Projeto Diarias\DiariasRO_com_perfil_historico_editavel\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\Microsoft.AspNetCore.OpenApi.dll
+F:\Mod\Projeto Diarias\DiariasRO_com_perfil_historico_editavel\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\Microsoft.Data.Sqlite.dll
+F:\Mod\Projeto Diarias\DiariasRO_com_perfil_historico_editavel\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.dll
+F:\Mod\Projeto Diarias\DiariasRO_com_perfil_historico_editavel\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+F:\Mod\Projeto Diarias\DiariasRO_com_perfil_historico_editavel\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.Relational.dll
+F:\Mod\Projeto Diarias\DiariasRO_com_perfil_historico_editavel\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.Sqlite.dll
+F:\Mod\Projeto Diarias\DiariasRO_com_perfil_historico_editavel\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\Microsoft.Extensions.DependencyModel.dll
+F:\Mod\Projeto Diarias\DiariasRO_com_perfil_historico_editavel\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\Microsoft.OpenApi.dll
+F:\Mod\Projeto Diarias\DiariasRO_com_perfil_historico_editavel\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\SQLitePCLRaw.batteries_v2.dll
+F:\Mod\Projeto Diarias\DiariasRO_com_perfil_historico_editavel\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\SQLitePCLRaw.core.dll
+F:\Mod\Projeto Diarias\DiariasRO_com_perfil_historico_editavel\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\SQLitePCLRaw.provider.e_sqlite3.dll
+F:\Mod\Projeto Diarias\DiariasRO_com_perfil_historico_editavel\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\Swashbuckle.AspNetCore.Swagger.dll
+F:\Mod\Projeto Diarias\DiariasRO_com_perfil_historico_editavel\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+F:\Mod\Projeto Diarias\DiariasRO_com_perfil_historico_editavel\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+F:\Mod\Projeto Diarias\DiariasRO_com_perfil_historico_editavel\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\runtimes\browser-wasm\nativeassets\net9.0\e_sqlite3.a
+F:\Mod\Projeto Diarias\DiariasRO_com_perfil_historico_editavel\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\runtimes\linux-arm\native\libe_sqlite3.so
+F:\Mod\Projeto Diarias\DiariasRO_com_perfil_historico_editavel\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\runtimes\linux-arm64\native\libe_sqlite3.so
+F:\Mod\Projeto Diarias\DiariasRO_com_perfil_historico_editavel\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\runtimes\linux-armel\native\libe_sqlite3.so
+F:\Mod\Projeto Diarias\DiariasRO_com_perfil_historico_editavel\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\runtimes\linux-mips64\native\libe_sqlite3.so
+F:\Mod\Projeto Diarias\DiariasRO_com_perfil_historico_editavel\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\runtimes\linux-musl-arm\native\libe_sqlite3.so
+F:\Mod\Projeto Diarias\DiariasRO_com_perfil_historico_editavel\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\runtimes\linux-musl-arm64\native\libe_sqlite3.so
+F:\Mod\Projeto Diarias\DiariasRO_com_perfil_historico_editavel\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\runtimes\linux-musl-riscv64\native\libe_sqlite3.so
+F:\Mod\Projeto Diarias\DiariasRO_com_perfil_historico_editavel\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\runtimes\linux-musl-s390x\native\libe_sqlite3.so
+F:\Mod\Projeto Diarias\DiariasRO_com_perfil_historico_editavel\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\runtimes\linux-musl-x64\native\libe_sqlite3.so
+F:\Mod\Projeto Diarias\DiariasRO_com_perfil_historico_editavel\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\runtimes\linux-ppc64le\native\libe_sqlite3.so
+F:\Mod\Projeto Diarias\DiariasRO_com_perfil_historico_editavel\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\runtimes\linux-riscv64\native\libe_sqlite3.so
+F:\Mod\Projeto Diarias\DiariasRO_com_perfil_historico_editavel\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\runtimes\linux-s390x\native\libe_sqlite3.so
+F:\Mod\Projeto Diarias\DiariasRO_com_perfil_historico_editavel\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\runtimes\linux-x64\native\libe_sqlite3.so
+F:\Mod\Projeto Diarias\DiariasRO_com_perfil_historico_editavel\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\runtimes\linux-x86\native\libe_sqlite3.so
+F:\Mod\Projeto Diarias\DiariasRO_com_perfil_historico_editavel\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\runtimes\maccatalyst-arm64\native\libe_sqlite3.dylib
+F:\Mod\Projeto Diarias\DiariasRO_com_perfil_historico_editavel\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\runtimes\maccatalyst-x64\native\libe_sqlite3.dylib
+F:\Mod\Projeto Diarias\DiariasRO_com_perfil_historico_editavel\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\runtimes\osx-arm64\native\libe_sqlite3.dylib
+F:\Mod\Projeto Diarias\DiariasRO_com_perfil_historico_editavel\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\runtimes\osx-x64\native\libe_sqlite3.dylib
+F:\Mod\Projeto Diarias\DiariasRO_com_perfil_historico_editavel\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\runtimes\win-arm64\native\e_sqlite3.dll
+F:\Mod\Projeto Diarias\DiariasRO_com_perfil_historico_editavel\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\runtimes\win-x64\native\e_sqlite3.dll
+F:\Mod\Projeto Diarias\DiariasRO_com_perfil_historico_editavel\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\runtimes\win-x86\native\e_sqlite3.dll
+F:\Mod\Projeto Diarias\DiariasRO_com_perfil_historico_editavel\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\DiariasRO.Domain.dll
+F:\Mod\Projeto Diarias\DiariasRO_com_perfil_historico_editavel\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\DiariasRO.Domain.pdb
+F:\Mod\Projeto Diarias\DiariasRO_com_perfil_historico_editavel\DiariasRO\src\DiariasRO.Api\obj\Debug\net10.0\DiariasRO.Api.csproj.AssemblyReference.cache
+F:\Mod\Projeto Diarias\DiariasRO_com_perfil_historico_editavel\DiariasRO\src\DiariasRO.Api\obj\Debug\net10.0\rpswa.dswa.cache.json
+F:\Mod\Projeto Diarias\DiariasRO_com_perfil_historico_editavel\DiariasRO\src\DiariasRO.Api\obj\Debug\net10.0\DiariasRO.Api.GeneratedMSBuildEditorConfig.editorconfig
+F:\Mod\Projeto Diarias\DiariasRO_com_perfil_historico_editavel\DiariasRO\src\DiariasRO.Api\obj\Debug\net10.0\DiariasRO.Api.AssemblyInfoInputs.cache
+F:\Mod\Projeto Diarias\DiariasRO_com_perfil_historico_editavel\DiariasRO\src\DiariasRO.Api\obj\Debug\net10.0\DiariasRO.Api.AssemblyInfo.cs
+F:\Mod\Projeto Diarias\DiariasRO_com_perfil_historico_editavel\DiariasRO\src\DiariasRO.Api\obj\Debug\net10.0\DiariasRO.Api.csproj.CoreCompileInputs.cache
+F:\Mod\Projeto Diarias\DiariasRO_com_perfil_historico_editavel\DiariasRO\src\DiariasRO.Api\obj\Debug\net10.0\DiariasRO.Api.MvcApplicationPartsAssemblyInfo.cs
+F:\Mod\Projeto Diarias\DiariasRO_com_perfil_historico_editavel\DiariasRO\src\DiariasRO.Api\obj\Debug\net10.0\DiariasRO.Api.MvcApplicationPartsAssemblyInfo.cache
+F:\Mod\Projeto Diarias\DiariasRO_com_perfil_historico_editavel\DiariasRO\src\DiariasRO.Api\obj\Debug\net10.0\rjimswa.dswa.cache.json
+F:\Mod\Projeto Diarias\DiariasRO_com_perfil_historico_editavel\DiariasRO\src\DiariasRO.Api\obj\Debug\net10.0\rjsmrazor.dswa.cache.json
+F:\Mod\Projeto Diarias\DiariasRO_com_perfil_historico_editavel\DiariasRO\src\DiariasRO.Api\obj\Debug\net10.0\rjsmcshtml.dswa.cache.json
+F:\Mod\Projeto Diarias\DiariasRO_com_perfil_historico_editavel\DiariasRO\src\DiariasRO.Api\obj\Debug\net10.0\scopedcss\bundle\DiariasRO.Api.styles.css
+F:\Mod\Projeto Diarias\DiariasRO_com_perfil_historico_editavel\DiariasRO\src\DiariasRO.Api\obj\Debug\net10.0\staticwebassets.build.json
+F:\Mod\Projeto Diarias\DiariasRO_com_perfil_historico_editavel\DiariasRO\src\DiariasRO.Api\obj\Debug\net10.0\staticwebassets.build.json.cache
+F:\Mod\Projeto Diarias\DiariasRO_com_perfil_historico_editavel\DiariasRO\src\DiariasRO.Api\obj\Debug\net10.0\staticwebassets.development.json
+F:\Mod\Projeto Diarias\DiariasRO_com_perfil_historico_editavel\DiariasRO\src\DiariasRO.Api\obj\Debug\net10.0\staticwebassets.build.endpoints.json
+F:\Mod\Projeto Diarias\DiariasRO_com_perfil_historico_editavel\DiariasRO\src\DiariasRO.Api\obj\Debug\net10.0\swae.build.ex.cache
+F:\Mod\Projeto Diarias\DiariasRO_com_perfil_historico_editavel\DiariasRO\src\DiariasRO.Api\obj\Debug\net10.0\DiariasRO.Api.dll
+F:\Mod\Projeto Diarias\DiariasRO_com_perfil_historico_editavel\DiariasRO\src\DiariasRO.Api\obj\Debug\net10.0\refint\DiariasRO.Api.dll
+F:\Mod\Projeto Diarias\DiariasRO_com_perfil_historico_editavel\DiariasRO\src\DiariasRO.Api\obj\Debug\net10.0\DiariasRO.Api.pdb
+F:\Mod\Projeto Diarias\DiariasRO_com_perfil_historico_editavel\DiariasRO\src\DiariasRO.Api\obj\Debug\net10.0\DiariasRO.Api.genruntimeconfig.cache
+F:\Mod\Projeto Diarias\DiariasRO_com_perfil_historico_editavel\DiariasRO\src\DiariasRO.Api\obj\Debug\net10.0\ref\DiariasRO.Api.dll
+F:\Mod\Projeto Diarias\DiariasRO_com_perfil_historico_editavel\DiariasRO\src\DiariasRO.Api\obj\Debug\net10.0\DiariasR.7F3152C1.Up2Date
+F:\Mod\Projeto Diarias\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\appsettings.Development.json
+F:\Mod\Projeto Diarias\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\appsettings.json
+F:\Mod\Projeto Diarias\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\DiariasRO.api.staticwebassets.endpoints.json
+F:\Mod\Projeto Diarias\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\DiariasRO.api.exe
+F:\Mod\Projeto Diarias\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\DiariasRO.api.deps.json
+F:\Mod\Projeto Diarias\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\DiariasRO.api.runtimeconfig.json
+F:\Mod\Projeto Diarias\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\DiariasRO.api.dll
+F:\Mod\Projeto Diarias\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\DiariasRO.api.pdb
+F:\Mod\Projeto Diarias\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\Microsoft.AspNetCore.OpenApi.dll
+F:\Mod\Projeto Diarias\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\Microsoft.Data.Sqlite.dll
+F:\Mod\Projeto Diarias\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.dll
+F:\Mod\Projeto Diarias\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+F:\Mod\Projeto Diarias\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.Relational.dll
+F:\Mod\Projeto Diarias\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.Sqlite.dll
+F:\Mod\Projeto Diarias\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\Microsoft.Extensions.DependencyModel.dll
+F:\Mod\Projeto Diarias\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\Microsoft.OpenApi.dll
+F:\Mod\Projeto Diarias\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\SQLitePCLRaw.batteries_v2.dll
+F:\Mod\Projeto Diarias\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\SQLitePCLRaw.core.dll
+F:\Mod\Projeto Diarias\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\SQLitePCLRaw.provider.e_sqlite3.dll
+F:\Mod\Projeto Diarias\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\Swashbuckle.AspNetCore.Swagger.dll
+F:\Mod\Projeto Diarias\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+F:\Mod\Projeto Diarias\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+F:\Mod\Projeto Diarias\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\runtimes\browser-wasm\nativeassets\net9.0\e_sqlite3.a
+F:\Mod\Projeto Diarias\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\runtimes\linux-arm\native\libe_sqlite3.so
+F:\Mod\Projeto Diarias\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\runtimes\linux-arm64\native\libe_sqlite3.so
+F:\Mod\Projeto Diarias\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\runtimes\linux-armel\native\libe_sqlite3.so
+F:\Mod\Projeto Diarias\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\runtimes\linux-mips64\native\libe_sqlite3.so
+F:\Mod\Projeto Diarias\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\runtimes\linux-musl-arm\native\libe_sqlite3.so
+F:\Mod\Projeto Diarias\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\runtimes\linux-musl-arm64\native\libe_sqlite3.so
+F:\Mod\Projeto Diarias\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\runtimes\linux-musl-riscv64\native\libe_sqlite3.so
+F:\Mod\Projeto Diarias\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\runtimes\linux-musl-s390x\native\libe_sqlite3.so
+F:\Mod\Projeto Diarias\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\runtimes\linux-musl-x64\native\libe_sqlite3.so
+F:\Mod\Projeto Diarias\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\runtimes\linux-ppc64le\native\libe_sqlite3.so
+F:\Mod\Projeto Diarias\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\runtimes\linux-riscv64\native\libe_sqlite3.so
+F:\Mod\Projeto Diarias\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\runtimes\linux-s390x\native\libe_sqlite3.so
+F:\Mod\Projeto Diarias\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\runtimes\linux-x64\native\libe_sqlite3.so
+F:\Mod\Projeto Diarias\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\runtimes\linux-x86\native\libe_sqlite3.so
+F:\Mod\Projeto Diarias\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\runtimes\maccatalyst-arm64\native\libe_sqlite3.dylib
+F:\Mod\Projeto Diarias\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\runtimes\maccatalyst-x64\native\libe_sqlite3.dylib
+F:\Mod\Projeto Diarias\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\runtimes\osx-arm64\native\libe_sqlite3.dylib
+F:\Mod\Projeto Diarias\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\runtimes\osx-x64\native\libe_sqlite3.dylib
+F:\Mod\Projeto Diarias\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\runtimes\win-arm64\native\e_sqlite3.dll
+F:\Mod\Projeto Diarias\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\runtimes\win-x64\native\e_sqlite3.dll
+F:\Mod\Projeto Diarias\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\runtimes\win-x86\native\e_sqlite3.dll
+F:\Mod\Projeto Diarias\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\DiariasRO.Domain.dll
+F:\Mod\Projeto Diarias\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\DiariasRO.Domain.pdb
+F:\Mod\Projeto Diarias\DiariasRO\src\DiariasRO.Api\obj\Debug\net10.0\DiariasRO.api.csproj.AssemblyReference.cache
+F:\Mod\Projeto Diarias\DiariasRO\src\DiariasRO.Api\obj\Debug\net10.0\rpswa.dswa.cache.json
+F:\Mod\Projeto Diarias\DiariasRO\src\DiariasRO.Api\obj\Debug\net10.0\DiariasRO.api.GeneratedMSBuildEditorConfig.editorconfig
+F:\Mod\Projeto Diarias\DiariasRO\src\DiariasRO.Api\obj\Debug\net10.0\DiariasRO.api.AssemblyInfoInputs.cache
+F:\Mod\Projeto Diarias\DiariasRO\src\DiariasRO.Api\obj\Debug\net10.0\DiariasRO.api.AssemblyInfo.cs
+F:\Mod\Projeto Diarias\DiariasRO\src\DiariasRO.Api\obj\Debug\net10.0\DiariasRO.api.csproj.CoreCompileInputs.cache
+F:\Mod\Projeto Diarias\DiariasRO\src\DiariasRO.Api\obj\Debug\net10.0\DiariasRO.api.MvcApplicationPartsAssemblyInfo.cs
+F:\Mod\Projeto Diarias\DiariasRO\src\DiariasRO.Api\obj\Debug\net10.0\DiariasRO.api.MvcApplicationPartsAssemblyInfo.cache
+F:\Mod\Projeto Diarias\DiariasRO\src\DiariasRO.Api\obj\Debug\net10.0\rjimswa.dswa.cache.json
+F:\Mod\Projeto Diarias\DiariasRO\src\DiariasRO.Api\obj\Debug\net10.0\rjsmrazor.dswa.cache.json
+F:\Mod\Projeto Diarias\DiariasRO\src\DiariasRO.Api\obj\Debug\net10.0\rjsmcshtml.dswa.cache.json
+F:\Mod\Projeto Diarias\DiariasRO\src\DiariasRO.Api\obj\Debug\net10.0\scopedcss\bundle\DiariasRO.api.styles.css
+F:\Mod\Projeto Diarias\DiariasRO\src\DiariasRO.Api\obj\Debug\net10.0\staticwebassets.build.json
+F:\Mod\Projeto Diarias\DiariasRO\src\DiariasRO.Api\obj\Debug\net10.0\staticwebassets.build.json.cache
+F:\Mod\Projeto Diarias\DiariasRO\src\DiariasRO.Api\obj\Debug\net10.0\staticwebassets.development.json
+F:\Mod\Projeto Diarias\DiariasRO\src\DiariasRO.Api\obj\Debug\net10.0\staticwebassets.build.endpoints.json
+F:\Mod\Projeto Diarias\DiariasRO\src\DiariasRO.Api\obj\Debug\net10.0\swae.build.ex.cache
+F:\Mod\Projeto Diarias\DiariasRO\src\DiariasRO.Api\obj\Debug\net10.0\DiariasR.7F3152C1.Up2Date
+F:\Mod\Projeto Diarias\DiariasRO\src\DiariasRO.Api\obj\Debug\net10.0\DiariasRO.api.dll
+F:\Mod\Projeto Diarias\DiariasRO\src\DiariasRO.Api\obj\Debug\net10.0\refint\DiariasRO.api.dll
+F:\Mod\Projeto Diarias\DiariasRO\src\DiariasRO.Api\obj\Debug\net10.0\DiariasRO.api.pdb
+F:\Mod\Projeto Diarias\DiariasRO\src\DiariasRO.Api\obj\Debug\net10.0\DiariasRO.api.genruntimeconfig.cache
+F:\Mod\Projeto Diarias\DiariasRO\src\DiariasRO.Api\obj\Debug\net10.0\ref\DiariasRO.api.dll
+C:\Users\03478537223\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\appsettings.Development.json
+C:\Users\03478537223\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\appsettings.json
+C:\Users\03478537223\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\DiariasRO.api.staticwebassets.endpoints.json
+C:\Users\03478537223\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\DiariasRO.api.exe
+C:\Users\03478537223\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\DiariasRO.api.deps.json
+C:\Users\03478537223\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\DiariasRO.api.runtimeconfig.json
+C:\Users\03478537223\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\DiariasRO.api.dll
+C:\Users\03478537223\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\DiariasRO.api.pdb
+C:\Users\03478537223\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\Microsoft.AspNetCore.OpenApi.dll
+C:\Users\03478537223\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\Microsoft.Data.Sqlite.dll
+C:\Users\03478537223\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\03478537223\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\03478537223\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\03478537223\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.Sqlite.dll
+C:\Users\03478537223\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\03478537223\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\Microsoft.OpenApi.dll
+C:\Users\03478537223\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\SQLitePCLRaw.batteries_v2.dll
+C:\Users\03478537223\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\SQLitePCLRaw.core.dll
+C:\Users\03478537223\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\SQLitePCLRaw.provider.e_sqlite3.dll
+C:\Users\03478537223\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\03478537223\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\03478537223\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\03478537223\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\runtimes\browser-wasm\nativeassets\net9.0\e_sqlite3.a
+C:\Users\03478537223\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\runtimes\linux-arm\native\libe_sqlite3.so
+C:\Users\03478537223\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\runtimes\linux-arm64\native\libe_sqlite3.so
+C:\Users\03478537223\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\runtimes\linux-armel\native\libe_sqlite3.so
+C:\Users\03478537223\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\runtimes\linux-mips64\native\libe_sqlite3.so
+C:\Users\03478537223\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\runtimes\linux-musl-arm\native\libe_sqlite3.so
+C:\Users\03478537223\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\runtimes\linux-musl-arm64\native\libe_sqlite3.so
+C:\Users\03478537223\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\runtimes\linux-musl-riscv64\native\libe_sqlite3.so
+C:\Users\03478537223\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\runtimes\linux-musl-s390x\native\libe_sqlite3.so
+C:\Users\03478537223\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\runtimes\linux-musl-x64\native\libe_sqlite3.so
+C:\Users\03478537223\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\runtimes\linux-ppc64le\native\libe_sqlite3.so
+C:\Users\03478537223\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\runtimes\linux-riscv64\native\libe_sqlite3.so
+C:\Users\03478537223\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\runtimes\linux-s390x\native\libe_sqlite3.so
+C:\Users\03478537223\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\runtimes\linux-x64\native\libe_sqlite3.so
+C:\Users\03478537223\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\runtimes\linux-x86\native\libe_sqlite3.so
+C:\Users\03478537223\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\runtimes\maccatalyst-arm64\native\libe_sqlite3.dylib
+C:\Users\03478537223\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\runtimes\maccatalyst-x64\native\libe_sqlite3.dylib
+C:\Users\03478537223\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\runtimes\osx-arm64\native\libe_sqlite3.dylib
+C:\Users\03478537223\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\runtimes\osx-x64\native\libe_sqlite3.dylib
+C:\Users\03478537223\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\runtimes\win-arm64\native\e_sqlite3.dll
+C:\Users\03478537223\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\runtimes\win-x64\native\e_sqlite3.dll
+C:\Users\03478537223\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\runtimes\win-x86\native\e_sqlite3.dll
+C:\Users\03478537223\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\DiariasRO.Domain.dll
+C:\Users\03478537223\DiariasRO\src\DiariasRO.Api\bin\Debug\net10.0\DiariasRO.Domain.pdb
+C:\Users\03478537223\DiariasRO\src\DiariasRO.Api\obj\Debug\net10.0\DiariasRO.api.csproj.AssemblyReference.cache
+C:\Users\03478537223\DiariasRO\src\DiariasRO.Api\obj\Debug\net10.0\rpswa.dswa.cache.json
+C:\Users\03478537223\DiariasRO\src\DiariasRO.Api\obj\Debug\net10.0\DiariasRO.api.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\03478537223\DiariasRO\src\DiariasRO.Api\obj\Debug\net10.0\DiariasRO.api.AssemblyInfoInputs.cache
+C:\Users\03478537223\DiariasRO\src\DiariasRO.Api\obj\Debug\net10.0\DiariasRO.api.AssemblyInfo.cs
+C:\Users\03478537223\DiariasRO\src\DiariasRO.Api\obj\Debug\net10.0\DiariasRO.api.csproj.CoreCompileInputs.cache
+C:\Users\03478537223\DiariasRO\src\DiariasRO.Api\obj\Debug\net10.0\DiariasRO.api.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\03478537223\DiariasRO\src\DiariasRO.Api\obj\Debug\net10.0\DiariasRO.api.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\03478537223\DiariasRO\src\DiariasRO.Api\obj\Debug\net10.0\rjimswa.dswa.cache.json
+C:\Users\03478537223\DiariasRO\src\DiariasRO.Api\obj\Debug\net10.0\rjsmrazor.dswa.cache.json
+C:\Users\03478537223\DiariasRO\src\DiariasRO.Api\obj\Debug\net10.0\rjsmcshtml.dswa.cache.json
+C:\Users\03478537223\DiariasRO\src\DiariasRO.Api\obj\Debug\net10.0\scopedcss\bundle\DiariasRO.api.styles.css
+C:\Users\03478537223\DiariasRO\src\DiariasRO.Api\obj\Debug\net10.0\staticwebassets.build.json
+C:\Users\03478537223\DiariasRO\src\DiariasRO.Api\obj\Debug\net10.0\staticwebassets.build.json.cache
+C:\Users\03478537223\DiariasRO\src\DiariasRO.Api\obj\Debug\net10.0\staticwebassets.development.json
+C:\Users\03478537223\DiariasRO\src\DiariasRO.Api\obj\Debug\net10.0\staticwebassets.build.endpoints.json
+C:\Users\03478537223\DiariasRO\src\DiariasRO.Api\obj\Debug\net10.0\swae.build.ex.cache
+C:\Users\03478537223\DiariasRO\src\DiariasRO.Api\obj\Debug\net10.0\DiariasR.7F3152C1.Up2Date
+C:\Users\03478537223\DiariasRO\src\DiariasRO.Api\obj\Debug\net10.0\DiariasRO.api.dll
+C:\Users\03478537223\DiariasRO\src\DiariasRO.Api\obj\Debug\net10.0\refint\DiariasRO.api.dll
+C:\Users\03478537223\DiariasRO\src\DiariasRO.Api\obj\Debug\net10.0\DiariasRO.api.pdb
+C:\Users\03478537223\DiariasRO\src\DiariasRO.Api\obj\Debug\net10.0\DiariasRO.api.genruntimeconfig.cache
+C:\Users\03478537223\DiariasRO\src\DiariasRO.Api\obj\Debug\net10.0\ref\DiariasRO.api.dll
