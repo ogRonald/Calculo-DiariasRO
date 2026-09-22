@@ -19,7 +19,8 @@ public class HistoricoController : ControllerBase
         var itens = await _db.Historicos
             .Where(h => h.UsuarioId == usuarioId)
             .OrderByDescending(h => h.CriadoEm)
-            .Select(h => new { h.Id, h.Destino, h.TotalDias, h.ValorUnitarioBrl, h.ValorTotalBrl, h.CriadoEm })
+            // Atualizado para retornar o NomeBeneficiario
+            .Select(h => new { h.Id, h.NomeBeneficiario, h.Destino, h.TotalDias, h.ValorUnitarioBrl, h.ValorTotalBrl, h.CriadoEm })
             .ToListAsync();
         return Ok(itens);
     }
@@ -28,11 +29,14 @@ public class HistoricoController : ControllerBase
     public async Task<IActionResult> Salvar([FromBody] SalvarHistoricoDto dto)
     {
         var usuarioExiste = await _db.Usuarios.AnyAsync(u => u.Id == dto.UsuarioId);
-        if (!usuarioExiste) return NotFound(new { erro = "Usuário não encontrado." });
+        if (!usuarioExiste) return NotFound(new { erro = "Usuário operador não encontrado." });
 
         var item = new HistoricoCalculo
         {
             UsuarioId = dto.UsuarioId,
+            NomeBeneficiario = dto.NomeBeneficiario,           // Mapeado
+            MatriculaBeneficiario = dto.MatriculaBeneficiario, // Mapeado
+            OrgaoBeneficiario = dto.OrgaoBeneficiario,         // Mapeado
             Destino = dto.Destino,
             DataHoraInicio = dto.DataHoraInicio,
             DataHoraFim = dto.DataHoraFim,
@@ -40,6 +44,7 @@ public class HistoricoController : ControllerBase
             ValorUnitarioBrl = dto.ValorUnitarioBrl,
             ValorTotalBrl = dto.ValorTotalBrl
         };
+        
         _db.Historicos.Add(item);
         await _db.SaveChangesAsync();
         return Ok(item);
