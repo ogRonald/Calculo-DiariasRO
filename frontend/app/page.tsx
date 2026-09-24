@@ -156,12 +156,8 @@ export default function CalculadoraDiarias() {
       <header className="relative z-10 bg-[#0F2C59] text-white p-4 shadow-md border-b-4 border-[#059669]">
         <div className="max-w-5xl mx-auto flex justify-between items-center">
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-[#059669] rounded-lg flex items-center justify-center font-bold text-lg text-white shadow-sm">RO</div>
-            <div>
-              <h1 className="font-bold text-lg sm:text-xl leading-tight"> SICADI </h1>
-              <p className="text-xs text-slate-300">Sistema de Cálculo de Diárias</p>
+            <img src="/SICADI-03.png" alt="Logo SICADI" className="h-14 w-auto object-contain" />
             </div>
-          </div>
           <div className="flex items-center gap-3">
             <button onClick={() => router.push('/perfil?editar=true')} className="text-xs bg-white/10 hover:bg-white/20 text-white px-3 py-1.5 rounded-md font-medium transition-colors">Meu perfil</button>
             <button onClick={handleLogout} className="text-xs bg-white/10 hover:bg-white/20 text-white px-3 py-1.5 rounded-md font-medium transition-colors">Sair</button>
@@ -171,16 +167,16 @@ export default function CalculadoraDiarias() {
 
       <main className="relative z-10 max-w-5xl mx-auto p-4 sm:p-6">
         <div className="flex border-b border-slate-300 mb-6 bg-white rounded-t-lg shadow-2xl overflow-x-auto">
-          <button onClick={() => setActiveTab('form')} className={`flex-1 py-3 px-4 text-sm font-medium transition-colors text-center border-b-2 whitespace-nowrap ${activeTab === 'form' ? 'border-[#059669] text-[#0F2C59] bg-slate-50 font-bold' : 'border-transparent text-slate-500 hover:text-slate-700'}`}>1. Formulário de Solicitante</button>
-          <button onClick={() => { if (resultadoCalculo?.elegivel) setActiveTab('statement'); }} className={`flex-1 py-3 px-4 text-sm font-medium transition-colors text-center border-b-2 whitespace-nowrap ${activeTab === 'statement' ? 'border-[#059669] text-[#0F2C59] bg-slate-50 font-bold' : 'border-transparent text-slate-500 hover:text-slate-700'}`}>2. Demonstrativo de Diárias</button>
-          <button onClick={() => setActiveTab('history')} className={`flex-1 py-3 px-4 text-sm font-medium transition-colors text-center border-b-2 whitespace-nowrap ${activeTab === 'history' ? 'border-[#059669] text-[#0F2C59] bg-slate-50 font-bold' : 'border-transparent text-slate-500 hover:text-slate-700'}`}>3. Histórico de Consultas</button>
+          <button onClick={() => setActiveTab('form')} className={`flex-1 py-3 px-4 text-sm font-medium transition-colors text-center border-b-2 whitespace-nowrap ${activeTab === 'form' ? 'border-[#059669] text-[#0F2C59] bg-slate-50 font-bold' : 'border-transparent text-slate-500 hover:text-slate-700'}`}> Formulário de Solicitante</button>
+          <button onClick={() => { if (resultadoCalculo?.elegivel) setActiveTab('statement'); }} className={`flex-1 py-3 px-4 text-sm font-medium transition-colors text-center border-b-2 whitespace-nowrap ${activeTab === 'statement' ? 'border-[#059669] text-[#0F2C59] bg-slate-50 font-bold' : 'border-transparent text-slate-500 hover:text-slate-700'}`}> Demonstrativo de Diárias</button>
+          <button onClick={() => setActiveTab('history')} className={`flex-1 py-3 px-4 text-sm font-medium transition-colors text-center border-b-2 whitespace-nowrap ${activeTab === 'history' ? 'border-[#059669] text-[#0F2C59] bg-slate-50 font-bold' : 'border-transparent text-slate-500 hover:text-slate-700'}`}> Histórico de Consultas</button>
         </div>
 
         {activeTab === 'form' && (
           <div className="bg-white p-6 rounded-lg shadow-2xl border border-slate-200">
             <div className="border-b pb-4 mb-6">
               <h2 className="text-xl font-bold text-[#0F2C59]">Preencha os Dados do Cálculo</h2>
-              <p className="text-sm text-slate-500">Informe os dados do servidor e os parâmetros da viagem. O sistema calculará automaticamente.</p>
+              <p className="text-sm text-slate-500">Informe os dados do servidor e os parâmetros da viagem.</p>
             </div>
 
             {erroValidacao && (
@@ -272,6 +268,17 @@ export default function CalculadoraDiarias() {
             <div className="mt-8 pt-4 border-t flex justify-end">
               <button onClick={handleCalcular} className="bg-[#059669] hover:bg-emerald-700 text-white font-medium px-6 py-2.5 rounded-md transition-colors shadow-sm">Simular Cálculo →</button>
             </div>
+
+            <footer className="relative z-10 flex items-center justify-center py-6 mt-auto">
+            <div className="flex items-center gap-2 text-xs text-slate-400/80">
+              <span>Desenvolvido por</span>
+              <img 
+                src="/Quarteto Fantástico Logo-01.png" 
+                alt="Logo da Equipe" 
+                className="h-10" 
+                />
+            </div>
+            </footer>
           </div>
         )}
 
@@ -282,6 +289,7 @@ export default function CalculadoraDiarias() {
                 <h2 className="text-xl font-bold text-[#0F2C59]">Demonstrativo de Cálculo de Diárias</h2>
                 <p className="text-sm text-slate-500">Resumo detalhado dos valores a serem indenizados.</p>
               </div>
+            
             </div>
 
             <div className="bg-slate-50 p-4 rounded-md mb-6 border border-slate-200 space-y-2 text-sm">
@@ -331,7 +339,6 @@ export default function CalculadoraDiarias() {
           <div className="bg-white p-6 rounded-lg shadow-2xl border border-slate-200">
             <div className="border-b pb-4 mb-6">
               <h2 className="text-xl font-bold text-[#0F2C59]">Histórico de Diárias Solicitadas</h2>
-              <p className="text-sm text-slate-500">Registros salvos no banco de dados.</p>
             </div>
 
             <div className="overflow-x-auto">
@@ -391,6 +398,20 @@ export default function CalculadoraDiarias() {
                 + Novo Cálculo
               </button>
             </div>
+
+              <footer className="relative z-10 flex items-center justify-center py-6 mt-auto">
+              <div className="flex items-center gap-2 text-xs text-slate-400/80">
+              <span>Desenvolvido por</span>
+              <img 
+                src="/Quarteto Fantástico Logo-01.png" 
+                alt="Logo da Equipe" 
+                className="h-10" 
+                />
+            </div>
+            </footer>
+
+
+
           </div>
         )}
       </main>
