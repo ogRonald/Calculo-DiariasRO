@@ -1,0 +1,83 @@
+SICADI - Sistema de Cálculo de Diárias (RO)
+O SICADI é um sistema Full-Stack desenvolvido para automatizar, padronizar e auditar o cálculo de diárias de viagem para os servidores do Governo do Estado de Rondônia, garantindo conformidade com a legislação estadual vigente.
+
+Principais Funcionalidades e Atualizações Recentes
+Motor de Cálculo Dinâmico: Aplicação exata das regras legais para viagens Estaduais, Nacionais e Internacionais, incluindo redutores específicos (ex: Acompanhante JOER, Cursos de longa duração, Hospedagem inclusa).
+
+Solicitação Flexível (Emissão para Terceiros): O sistema permite que o utilizador autenticado (operador/assistente) preencha o formulário e calcule as diárias para qualquer outro servidor (beneficiário), inserindo o seu Nome, Matrícula e Órgão.
+
+Persistência de Histórico de Consultas: Todos os cálculos simulados podem ser guardados. A base de dados regista tanto a identidade de quem operou o sistema quanto os dados do viajante, facilitando a auditoria.
+
+Geração de Relatório Oficial (PDF): Integração direta com motor de PDF para exportar o demonstrativo de cálculo num formato oficial e padronizado, pronto a ser descarregado e anexado aos processos no SEI.
+
+Autenticação e Perfis: Sistema seguro de login com hash de palavras-passe e gestão de perfil de utilizador.
+
+Tecnologias Utilizadas
+O projeto foi construído com uma arquitetura moderna e contentorizada:
+
+Frontend
+
+Next.js (React)
+
+TypeScript
+
+Tailwind CSS (Estilização responsiva)
+
+Backend
+
+.NET 8 / C# (Web API)
+
+Entity Framework Core (ORM via Fluent API)
+
+QuestPDF (Geração de documentos PDF)
+
+Infraestrutura e Base de Dados
+
+PostgreSQL (Base de dados relacional)
+
+Docker & Docker Compose (Orquestração de contentores)
+
+Como Executar o Projeto (Ambiente Local)
+Graças à contentorização com Docker, todo o ambiente (Base de dados, API C# e Interface Next.js) pode ser levantado com um único comando, sem a necessidade de instalar as linguagens localmente.
+
+Pré-requisitos
+Docker Desktop instalado e a correr.
+
+Passos para iniciar
+Clone o repositório para a sua máquina local.
+
+Abra o terminal na pasta raiz do projeto (onde se encontra o ficheiro docker-compose.yml).
+
+Execute o seguinte comando para construir e levantar todos os serviços:
+
+Bash
+docker compose up -d --build
+Aceda ao sistema através do navegador:
+
+Frontend (Aplicação): http://localhost:3000
+
+Backend (Swagger API Docs): http://localhost:5211/swagger (porta configurada no ambiente)
+
+(Nota: Na primeira execução, o Entity Framework Core irá detetar a ausência das tabelas e criará a estrutura completa da base de dados PostgreSQL de forma automática).
+
+Estrutura da Base de Dados (Atualizada)
+A tabela de Historicos foi recentemente expandida para suportar a separação entre o Operador (quem faz o login) e o Beneficiário (quem viaja):
+
+UsuarioId (Chave Estrangeira do Operador)
+
+NomeBeneficiario
+
+MatriculaBeneficiario
+
+OrgaoBeneficiario
+
+Destino, TotalDias, ValorTotalBrl, DataHoraInicio, DataHoraFim
+
+Endpoints Principais da API
+POST /api/v1/auth/login - Autenticação do utilizador.
+
+POST /api/v1/diarias/simular - Motor de regras para cálculo do valor das diárias.
+
+POST /api/v1/historico - Guarda o demonstrativo associando operador e beneficiário.
+
+GET /api/v1/relatorio/{id} - Devolve o ficheiro binário (application/pdf) do demonstrativo oficial.

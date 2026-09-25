@@ -1,0 +1,6 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/DiariasRO.Api/DiariasRO.Api.csproj" />
+    <Project Path="src/DiariasRO.Domain/DiariasRO.Domain.csproj" />
+  </Folder>
+</Solution>
