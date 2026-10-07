@@ -15,7 +15,7 @@ public class RelatorioController : ControllerBase
     public RelatorioController(DiariasDbContext db)
     {
         _db = db;
-        // O QuestPDF exige a declaração do tipo de licença comercial ou comunitária
+        
         QuestPDF.Settings.License = LicenseType.Community;
     }
 

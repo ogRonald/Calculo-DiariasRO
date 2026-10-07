@@ -135,7 +135,11 @@ export default function PerfilPage() {
             <p className="text-sm text-slate-500 mt-1">
               {modoEdicao
                 ? 'Atualize seus dados. Por segurança, sua senha atual será solicitada para confirmar a alteração.'
+<<<<<<< HEAD
                 : 'Complete todos os dados para continuar. Eles serão utilizados automaticamente no cálculo de diárias.'}
+=======
+                : 'Complete todos os dados para continuar.'}
+>>>>>>> 671154372fbbe94b647a6361f2d2241fbfa57218
             </p>
           </div>
 
