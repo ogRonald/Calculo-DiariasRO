@@ -122,11 +122,15 @@ export default function PerfilPage() {
         <div className="bg-[#0F2C59] text-white rounded-t-xl p-6 shadow-2xl border-b-4 border-[#059669]">
           <div className="flex items-center justify-between gap-4">
             <div className="flex items-center gap-3">
+<<<<<<< HEAD
               <div className="w-12 h-12 bg-[#059669] rounded-lg flex items-center justify-center font-bold text-xl text-white shadow-sm">RO</div>
               <div>
                 <h1 className="font-bold text-lg sm:text-xl leading-tight">Governo do Estado de Rondônia</h1>
                 <p className="text-xs text-slate-300 mt-1">{modoEdicao ? 'Alteração das informações do servidor' : 'Cadastro inicial do servidor'}</p>
               </div>
+=======
+              <img src="/SICADI-03.png" alt="Logo SICADI" className="h-14 w-auto object-contain" />
+>>>>>>> main
             </div>
             <button onClick={handleLogout} className="text-xs bg-white/10 hover:bg-white/20 text-white px-3 py-1.5 rounded-md font-medium transition-colors">Sair</button>
           </div>
@@ -139,7 +143,15 @@ export default function PerfilPage() {
             <p className="text-sm text-slate-500 mt-1">
               {modoEdicao
                 ? 'Atualize seus dados. Por segurança, sua senha atual será solicitada para confirmar a alteração.'
+<<<<<<< HEAD
                 : 'Complete todos os dados para continuar. Eles serão utilizados automaticamente no cálculo de diárias.'}
+=======
+<<<<<<< HEAD
+                : 'Complete todos os dados para continuar. Eles serão utilizados automaticamente no cálculo de diárias.'}
+=======
+                : 'Complete todos os dados para continuar.'}
+>>>>>>> 671154372fbbe94b647a6361f2d2241fbfa57218
+>>>>>>> main
             </p>
           </div>
 
@@ -192,6 +204,12 @@ export default function PerfilPage() {
             <button type="submit" disabled={salvando} className="px-6 py-2.5 rounded-md bg-[#059669] hover:bg-emerald-700 disabled:bg-emerald-400 text-white font-medium transition-colors shadow-sm">{salvando ? 'Salvando...' : (modoEdicao ? 'Salvar alterações' : 'Salvar e continuar')}</button>
           </div>
         </form>
+<<<<<<< HEAD
+=======
+      
+                   
+      
+>>>>>>> main
       </div>
     </main>
   );

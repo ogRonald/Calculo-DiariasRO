@@ -52,7 +52,10 @@ export default function CalculadoraDiarias() {
 
   const [activeTab, setActiveTab] = useState<'form' | 'statement' | 'history'>('form');
 
+<<<<<<< HEAD
   // 1. Estado inicial limpo (sem preenchimento forçado)
+=======
+>>>>>>> main
   const [formData, setFormData] = useState({
     servidor: '',
     matricula: '',
@@ -71,7 +74,10 @@ export default function CalculadoraDiarias() {
   useEffect(() => {
     if (usuario) {
       obterHistorico(usuario.id).then(setHistorico).catch(() => setHistorico([]));
+<<<<<<< HEAD
       // Removida a linha que forçava o preenchimento dos dados do usuário logado
+=======
+>>>>>>> main
     }
   }, [usuario]);
 
@@ -85,9 +91,15 @@ export default function CalculadoraDiarias() {
     try {
       const salvo = await salvarHistorico({
         usuarioId: usuario.id,
+<<<<<<< HEAD
         nomeBeneficiario: formData.servidor,       // Novo campo
         matriculaBeneficiario: formData.matricula, // Novo campo
         orgaoBeneficiario: formData.orgao,         // Novo campo
+=======
+        nomeBeneficiario: formData.servidor,
+        matriculaBeneficiario: formData.matricula,
+        orgaoBeneficiario: formData.orgao,
+>>>>>>> main
         destino: formData.destino,
         dataHoraInicio: formData.dataHoraInicio, 
         dataHoraFim: formData.dataHoraFim,
@@ -158,6 +170,7 @@ export default function CalculadoraDiarias() {
       <header className="relative z-10 bg-[#0F2C59] text-white p-4 shadow-md border-b-4 border-[#059669]">
         <div className="max-w-5xl mx-auto flex justify-between items-center">
           <div className="flex items-center space-x-3">
+<<<<<<< HEAD
             <div className="w-10 h-10 bg-[#059669] rounded-lg flex items-center justify-center font-bold text-lg text-white shadow-sm">RO</div>
             <div>
               <h1 className="font-bold text-lg sm:text-xl leading-tight">Governo do Estado de Rondônia</h1>
@@ -166,6 +179,11 @@ export default function CalculadoraDiarias() {
           </div>
           <div className="flex items-center gap-3">
             <span className="hidden sm:inline-block text-xs bg-[#059669] text-white px-3 py-1 rounded-full font-medium">Módulo Oficial</span>
+=======
+            <img src="/SICADI-03.png" alt="Logo SICADI" className="h-14 w-auto object-contain" />
+            </div>
+          <div className="flex items-center gap-3">
+>>>>>>> main
             <button onClick={() => router.push('/perfil?editar=true')} className="text-xs bg-white/10 hover:bg-white/20 text-white px-3 py-1.5 rounded-md font-medium transition-colors">Meu perfil</button>
             <button onClick={handleLogout} className="text-xs bg-white/10 hover:bg-white/20 text-white px-3 py-1.5 rounded-md font-medium transition-colors">Sair</button>
           </div>
@@ -174,16 +192,26 @@ export default function CalculadoraDiarias() {
 
       <main className="relative z-10 max-w-5xl mx-auto p-4 sm:p-6">
         <div className="flex border-b border-slate-300 mb-6 bg-white rounded-t-lg shadow-2xl overflow-x-auto">
+<<<<<<< HEAD
           <button onClick={() => setActiveTab('form')} className={`flex-1 py-3 px-4 text-sm font-medium transition-colors text-center border-b-2 whitespace-nowrap ${activeTab === 'form' ? 'border-[#059669] text-[#0F2C59] bg-slate-50 font-bold' : 'border-transparent text-slate-500 hover:text-slate-700'}`}>1. Formulário de Solicitante</button>
           <button onClick={() => { if (resultadoCalculo?.elegivel) setActiveTab('statement'); }} className={`flex-1 py-3 px-4 text-sm font-medium transition-colors text-center border-b-2 whitespace-nowrap ${activeTab === 'statement' ? 'border-[#059669] text-[#0F2C59] bg-slate-50 font-bold' : 'border-transparent text-slate-500 hover:text-slate-700'}`}>2. Demonstrativo de Diárias</button>
           <button onClick={() => setActiveTab('history')} className={`flex-1 py-3 px-4 text-sm font-medium transition-colors text-center border-b-2 whitespace-nowrap ${activeTab === 'history' ? 'border-[#059669] text-[#0F2C59] bg-slate-50 font-bold' : 'border-transparent text-slate-500 hover:text-slate-700'}`}>3. Histórico de Consultas</button>
+=======
+          <button onClick={() => setActiveTab('form')} className={`flex-1 py-3 px-4 text-sm font-medium transition-colors text-center border-b-2 whitespace-nowrap ${activeTab === 'form' ? 'border-[#059669] text-[#0F2C59] bg-slate-50 font-bold' : 'border-transparent text-slate-500 hover:text-slate-700'}`}> Formulário de Solicitante</button>
+          <button onClick={() => { if (resultadoCalculo?.elegivel) setActiveTab('statement'); }} className={`flex-1 py-3 px-4 text-sm font-medium transition-colors text-center border-b-2 whitespace-nowrap ${activeTab === 'statement' ? 'border-[#059669] text-[#0F2C59] bg-slate-50 font-bold' : 'border-transparent text-slate-500 hover:text-slate-700'}`}> Demonstrativo de Diárias</button>
+          <button onClick={() => setActiveTab('history')} className={`flex-1 py-3 px-4 text-sm font-medium transition-colors text-center border-b-2 whitespace-nowrap ${activeTab === 'history' ? 'border-[#059669] text-[#0F2C59] bg-slate-50 font-bold' : 'border-transparent text-slate-500 hover:text-slate-700'}`}> Histórico de Consultas</button>
+>>>>>>> main
         </div>
 
         {activeTab === 'form' && (
           <div className="bg-white p-6 rounded-lg shadow-2xl border border-slate-200">
             <div className="border-b pb-4 mb-6">
               <h2 className="text-xl font-bold text-[#0F2C59]">Preencha os Dados do Cálculo</h2>
+<<<<<<< HEAD
               <p className="text-sm text-slate-500">Informe os dados do servidor e os parâmetros da viagem. O sistema calculará automaticamente.</p>
+=======
+              <p className="text-sm text-slate-500">Informe os dados do servidor e os parâmetros da viagem.</p>
+>>>>>>> main
             </div>
 
             {erroValidacao && (
@@ -191,7 +219,10 @@ export default function CalculadoraDiarias() {
             )}
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+<<<<<<< HEAD
               {/* Inputs liberados */}
+=======
+>>>>>>> main
               <div>
                 <label className="block text-sm font-medium text-slate-700 mb-1">Nome Completo</label>
                 <input type="text" value={formData.servidor} onChange={(e) => setFormData({ ...formData, servidor: e.target.value })} placeholder="Nome do viajante" className="w-full p-2.5 border border-slate-300 rounded-md focus:ring-2 focus:ring-[#059669] focus:outline-none" />
@@ -276,6 +307,20 @@ export default function CalculadoraDiarias() {
             <div className="mt-8 pt-4 border-t flex justify-end">
               <button onClick={handleCalcular} className="bg-[#059669] hover:bg-emerald-700 text-white font-medium px-6 py-2.5 rounded-md transition-colors shadow-sm">Simular Cálculo →</button>
             </div>
+<<<<<<< HEAD
+=======
+
+            <footer className="relative z-10 flex items-center justify-center py-6 mt-auto">
+            <div className="flex items-center gap-2 text-xs text-slate-400/80">
+              <span>Desenvolvido por</span>
+              <img 
+                src="/Quarteto Fantástico Logo-01.png" 
+                alt="Logo da Equipe" 
+                className="h-10" 
+                />
+            </div>
+            </footer>
+>>>>>>> main
           </div>
         )}
 
@@ -286,6 +331,10 @@ export default function CalculadoraDiarias() {
                 <h2 className="text-xl font-bold text-[#0F2C59]">Demonstrativo de Cálculo de Diárias</h2>
                 <p className="text-sm text-slate-500">Resumo detalhado dos valores a serem indenizados.</p>
               </div>
+<<<<<<< HEAD
+=======
+            
+>>>>>>> main
             </div>
 
             <div className="bg-slate-50 p-4 rounded-md mb-6 border border-slate-200 space-y-2 text-sm">
@@ -335,11 +384,15 @@ export default function CalculadoraDiarias() {
           <div className="bg-white p-6 rounded-lg shadow-2xl border border-slate-200">
             <div className="border-b pb-4 mb-6">
               <h2 className="text-xl font-bold text-[#0F2C59]">Histórico de Diárias Solicitadas</h2>
+<<<<<<< HEAD
               <p className="text-sm text-slate-500">Registros salvos no banco de dados.</p>
+=======
+>>>>>>> main
             </div>
 
             <div className="overflow-x-auto">
               <table className="w-full text-left border-collapse">
+<<<<<<< HEAD
                 <thead><tr className="border-b bg-slate-100 text-xs text-slate-600 uppercase">
                   <th className="p-3">Viajante</th><th className="p-3">Destino</th><th className="p-3">Qtd.</th><th className="p-3 text-right">Total</th><th className="p-3 text-center">Status</th>
                 </tr></thead>
@@ -353,13 +406,82 @@ export default function CalculadoraDiarias() {
                     <td className="p-3 text-center"><span className="bg-emerald-100 text-emerald-800 text-xs px-2.5 py-1 rounded-full font-medium">Salvo</span></td>
                   </tr>)}
                   {historico.length === 0 && <tr><td colSpan={5} className="p-6 text-center text-slate-500">Nenhum cálculo salvo.</td></tr>}
+=======
+                <thead>
+                  <tr className="border-b bg-slate-100 text-xs text-slate-600 uppercase">
+                    <th className="p-3">Viajante</th>
+                    <th className="p-3">Destino</th>
+                    <th className="p-3">Qtd.</th>
+                    <th className="p-3 text-right">Total</th>
+                    <th className="p-3 text-center">Ações</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y text-sm">
+                  {historico.map((item) => (
+                    <tr key={item.id} className="hover:bg-slate-50">
+                      <td className="p-3 font-medium text-slate-700">{item.nomeBeneficiario || usuario?.nomeCompleto}</td>
+                      <td className="p-3 text-slate-600">{item.destino}</td>
+                      <td className="p-3 text-slate-600">{item.totalDias} d</td>
+                      <td className="p-3 text-right font-semibold text-slate-700">R$ {Number(item.valorTotalBrl).toFixed(2)}</td>
+                      <td className="p-3 text-center flex justify-center items-center gap-2">
+                        <span className="bg-emerald-100 text-emerald-800 text-xs px-2 py-1 rounded-md font-medium">
+                          Salvo
+                        </span>
+                        
+                        <button
+                          onClick={() => window.open(`http://localhost:5211/api/v1/relatorio/${item.id}`, '_blank')}
+                          className="bg-[#0F2C59] hover:bg-slate-800 text-white text-xs px-3 py-1.5 rounded-md font-medium transition-colors shadow-sm flex items-center gap-1.5"
+                          title="Baixar Documento Oficial"
+                        >
+                          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7 10 12 15 17 10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                          </svg>
+                          PDF
+                        </button>
+                      </td>
+                    </tr>
+                  ))}
+                  {historico.length === 0 && (
+                    <tr>
+                      <td colSpan={5} className="p-6 text-center text-slate-500">
+                        Nenhum cálculo salvo.
+                      </td>
+                    </tr>
+                  )}
+>>>>>>> main
                 </tbody>
               </table>
             </div>
 
             <div className="mt-6 pt-4 border-t flex justify-start">
+<<<<<<< HEAD
               <button onClick={() => { setResultadoCalculo(null); setActiveTab('form'); }} className="bg-[#059669] text-white text-sm font-medium px-4 py-2 rounded-md hover:bg-emerald-700">+ Novo Cálculo</button>
             </div>
+=======
+              <button 
+                onClick={() => { setResultadoCalculo(null); setActiveTab('form'); }} 
+                className="bg-[#059669] text-white text-sm font-medium px-4 py-2 rounded-md hover:bg-emerald-700"
+              >
+                + Novo Cálculo
+              </button>
+            </div>
+
+              <footer className="relative z-10 flex items-center justify-center py-6 mt-auto">
+              <div className="flex items-center gap-2 text-xs text-slate-400/80">
+              <span>Desenvolvido por</span>
+              <img 
+                src="/Quarteto Fantástico Logo-01.png" 
+                alt="Logo da Equipe" 
+                className="h-10" 
+                />
+            </div>
+            </footer>
+
+
+
+>>>>>>> main
           </div>
         )}
       </main>

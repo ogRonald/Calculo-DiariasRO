@@ -74,18 +74,26 @@ export default function LoginPage() {
       <div className="w-full max-w-md relative z-10">
         <div className="bg-[#0F2C59] text-white rounded-t-xl p-6 shadow-2xl border-b-4 border-[#059669]">
           <div className="flex items-center gap-3">
+<<<<<<< HEAD
             <div className="w-12 h-12 bg-[#059669] rounded-lg flex items-center justify-center font-bold text-xl text-white shadow-sm">RO</div>
             <div>
               <h1 className="font-bold text-lg sm:text-xl leading-tight">Governo do Estado de Rondônia</h1>
               <p className="text-xs text-slate-300 mt-1">Sistema de Calculadora de Diárias de Viagem</p>
             </div>
+=======
+            <img src="/SICADI-03.png" alt="Logo SICADI" className="h-14 w-auto object-contain" />
+>>>>>>> main
           </div>
         </div>
 
         <form onSubmit={handleLogin} className="bg-white rounded-b-xl shadow-2xl border border-slate-200 border-t-0 p-6 sm:p-8">
           <div className="border-b border-slate-200 pb-4 mb-6">
             <h2 className="text-xl font-bold text-[#0F2C59]">Acesso ao Sistema</h2>
+<<<<<<< HEAD
             <p className="text-sm text-slate-500 mt-1">Informe seus dados para acessar o sistema de cálculo de diárias.</p>
+=======
+            <p className="text-sm text-slate-500 mt-1">Informe seus Dados para Acessar o Sistema.</p>
+>>>>>>> main
           </div>
 
           {erro && <div className="mb-5 p-3 bg-red-50 border-l-4 border-red-600 text-red-700 text-sm font-medium rounded-r-md">{erro}</div>}
@@ -113,8 +121,24 @@ export default function LoginPage() {
           <button type="submit" disabled={carregando} className="w-full mt-7 bg-[#059669] hover:bg-emerald-700 disabled:bg-emerald-400 text-white font-medium px-6 py-2.5 rounded-md transition-colors shadow-sm">
             {carregando ? 'Entrando...' : 'Entrar'}
           </button>
+<<<<<<< HEAD
 
           
+=======
+          
+
+          <footer className="relative z-10 flex items-center justify-center py-6 mt-auto">
+            <div className="flex items-center gap-2 text-xs text-slate-400/80">
+              <span>Desenvolvido por</span>
+              <img 
+                src="/Quarteto Fantástico Logo-01.png" 
+                alt="Logo da Equipe" 
+                className="h-10" 
+                />
+            </div>
+            </footer>
+
+>>>>>>> main
         </form>
       </div>
     </main>
