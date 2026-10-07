@@ -52,10 +52,6 @@ export default function CalculadoraDiarias() {
 
   const [activeTab, setActiveTab] = useState<'form' | 'statement' | 'history'>('form');
 
-<<<<<<< HEAD
-  // 1. Estado inicial limpo (sem preenchimento forçado)
-=======
->>>>>>> main
   const [formData, setFormData] = useState({
     servidor: '',
     matricula: '',
@@ -74,10 +70,6 @@ export default function CalculadoraDiarias() {
   useEffect(() => {
     if (usuario) {
       obterHistorico(usuario.id).then(setHistorico).catch(() => setHistorico([]));
-<<<<<<< HEAD
-      // Removida a linha que forçava o preenchimento dos dados do usuário logado
-=======
->>>>>>> main
     }
   }, [usuario]);
 
@@ -91,15 +83,9 @@ export default function CalculadoraDiarias() {
     try {
       const salvo = await salvarHistorico({
         usuarioId: usuario.id,
-<<<<<<< HEAD
-        nomeBeneficiario: formData.servidor,       // Novo campo
-        matriculaBeneficiario: formData.matricula, // Novo campo
-        orgaoBeneficiario: formData.orgao,         // Novo campo
-=======
         nomeBeneficiario: formData.servidor,
         matriculaBeneficiario: formData.matricula,
         orgaoBeneficiario: formData.orgao,
->>>>>>> main
         destino: formData.destino,
         dataHoraInicio: formData.dataHoraInicio, 
         dataHoraFim: formData.dataHoraFim,
@@ -189,26 +175,16 @@ export default function CalculadoraDiarias() {
 
       <main className="relative z-10 max-w-5xl mx-auto p-4 sm:p-6">
         <div className="flex border-b border-slate-300 mb-6 bg-white rounded-t-lg shadow-2xl overflow-x-auto">
-<<<<<<< HEAD
-          <button onClick={() => setActiveTab('form')} className={`flex-1 py-3 px-4 text-sm font-medium transition-colors text-center border-b-2 whitespace-nowrap ${activeTab === 'form' ? 'border-[#059669] text-[#0F2C59] bg-slate-50 font-bold' : 'border-transparent text-slate-500 hover:text-slate-700'}`}>1. Formulário de Solicitante</button>
-          <button onClick={() => { if (resultadoCalculo?.elegivel) setActiveTab('statement'); }} className={`flex-1 py-3 px-4 text-sm font-medium transition-colors text-center border-b-2 whitespace-nowrap ${activeTab === 'statement' ? 'border-[#059669] text-[#0F2C59] bg-slate-50 font-bold' : 'border-transparent text-slate-500 hover:text-slate-700'}`}>2. Demonstrativo de Diárias</button>
-          <button onClick={() => setActiveTab('history')} className={`flex-1 py-3 px-4 text-sm font-medium transition-colors text-center border-b-2 whitespace-nowrap ${activeTab === 'history' ? 'border-[#059669] text-[#0F2C59] bg-slate-50 font-bold' : 'border-transparent text-slate-500 hover:text-slate-700'}`}>3. Histórico de Consultas</button>
-=======
           <button onClick={() => setActiveTab('form')} className={`flex-1 py-3 px-4 text-sm font-medium transition-colors text-center border-b-2 whitespace-nowrap ${activeTab === 'form' ? 'border-[#059669] text-[#0F2C59] bg-slate-50 font-bold' : 'border-transparent text-slate-500 hover:text-slate-700'}`}> Formulário de Solicitante</button>
           <button onClick={() => { if (resultadoCalculo?.elegivel) setActiveTab('statement'); }} className={`flex-1 py-3 px-4 text-sm font-medium transition-colors text-center border-b-2 whitespace-nowrap ${activeTab === 'statement' ? 'border-[#059669] text-[#0F2C59] bg-slate-50 font-bold' : 'border-transparent text-slate-500 hover:text-slate-700'}`}> Demonstrativo de Diárias</button>
           <button onClick={() => setActiveTab('history')} className={`flex-1 py-3 px-4 text-sm font-medium transition-colors text-center border-b-2 whitespace-nowrap ${activeTab === 'history' ? 'border-[#059669] text-[#0F2C59] bg-slate-50 font-bold' : 'border-transparent text-slate-500 hover:text-slate-700'}`}> Histórico de Consultas</button>
->>>>>>> main
         </div>
 
         {activeTab === 'form' && (
           <div className="bg-white p-6 rounded-lg shadow-2xl border border-slate-200">
             <div className="border-b pb-4 mb-6">
               <h2 className="text-xl font-bold text-[#0F2C59]">Preencha os Dados do Cálculo</h2>
-<<<<<<< HEAD
-              <p className="text-sm text-slate-500">Informe os dados do servidor e os parâmetros da viagem. O sistema calculará automaticamente.</p>
-=======
               <p className="text-sm text-slate-500">Informe os dados do servidor e os parâmetros da viagem.</p>
->>>>>>> main
             </div>
 
             {erroValidacao && (
@@ -216,10 +192,6 @@ export default function CalculadoraDiarias() {
             )}
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-<<<<<<< HEAD
-              {/* Inputs liberados */}
-=======
->>>>>>> main
               <div>
                 <label className="block text-sm font-medium text-slate-700 mb-1">Nome Completo</label>
                 <input type="text" value={formData.servidor} onChange={(e) => setFormData({ ...formData, servidor: e.target.value })} placeholder="Nome do viajante" className="w-full p-2.5 border border-slate-300 rounded-md focus:ring-2 focus:ring-[#059669] focus:outline-none" />
@@ -304,8 +276,6 @@ export default function CalculadoraDiarias() {
             <div className="mt-8 pt-4 border-t flex justify-end">
               <button onClick={handleCalcular} className="bg-[#059669] hover:bg-emerald-700 text-white font-medium px-6 py-2.5 rounded-md transition-colors shadow-sm">Simular Cálculo →</button>
             </div>
-<<<<<<< HEAD
-=======
 
             <footer className="relative z-10 flex items-center justify-center py-6 mt-auto">
             <div className="flex items-center gap-2 text-xs text-slate-400/80">
@@ -317,7 +287,6 @@ export default function CalculadoraDiarias() {
                 />
             </div>
             </footer>
->>>>>>> main
           </div>
         )}
 
@@ -328,10 +297,7 @@ export default function CalculadoraDiarias() {
                 <h2 className="text-xl font-bold text-[#0F2C59]">Demonstrativo de Cálculo de Diárias</h2>
                 <p className="text-sm text-slate-500">Resumo detalhado dos valores a serem indenizados.</p>
               </div>
-<<<<<<< HEAD
-=======
             
->>>>>>> main
             </div>
 
             <div className="bg-slate-50 p-4 rounded-md mb-6 border border-slate-200 space-y-2 text-sm">
@@ -381,29 +347,10 @@ export default function CalculadoraDiarias() {
           <div className="bg-white p-6 rounded-lg shadow-2xl border border-slate-200">
             <div className="border-b pb-4 mb-6">
               <h2 className="text-xl font-bold text-[#0F2C59]">Histórico de Diárias Solicitadas</h2>
-<<<<<<< HEAD
-              <p className="text-sm text-slate-500">Registros salvos no banco de dados.</p>
-=======
->>>>>>> main
             </div>
 
             <div className="overflow-x-auto">
               <table className="w-full text-left border-collapse">
-<<<<<<< HEAD
-                <thead><tr className="border-b bg-slate-100 text-xs text-slate-600 uppercase">
-                  <th className="p-3">Viajante</th><th className="p-3">Destino</th><th className="p-3">Qtd.</th><th className="p-3 text-right">Total</th><th className="p-3 text-center">Status</th>
-                </tr></thead>
-                <tbody className="divide-y text-sm">
-                  {historico.map((item) => <tr key={item.id}>
-                    {/* Alterado para priorizar o nome do beneficiário salvo no banco */}
-                    <td className="p-3 font-medium">{item.nomeBeneficiario || usuario?.nomeCompleto}</td>
-                    <td className="p-3">{item.destino}</td>
-                    <td className="p-3">{item.totalDias} d</td>
-                    <td className="p-3 text-right font-semibold">R$ {Number(item.valorTotalBrl).toFixed(2)}</td>
-                    <td className="p-3 text-center"><span className="bg-emerald-100 text-emerald-800 text-xs px-2.5 py-1 rounded-full font-medium">Salvo</span></td>
-                  </tr>)}
-                  {historico.length === 0 && <tr><td colSpan={5} className="p-6 text-center text-slate-500">Nenhum cálculo salvo.</td></tr>}
-=======
                 <thead>
                   <tr className="border-b bg-slate-100 text-xs text-slate-600 uppercase">
                     <th className="p-3">Viajante</th>
@@ -447,16 +394,11 @@ export default function CalculadoraDiarias() {
                       </td>
                     </tr>
                   )}
->>>>>>> main
                 </tbody>
               </table>
             </div>
 
             <div className="mt-6 pt-4 border-t flex justify-start">
-<<<<<<< HEAD
-              <button onClick={() => { setResultadoCalculo(null); setActiveTab('form'); }} className="bg-[#059669] text-white text-sm font-medium px-4 py-2 rounded-md hover:bg-emerald-700">+ Novo Cálculo</button>
-            </div>
-=======
               <button 
                 onClick={() => { setResultadoCalculo(null); setActiveTab('form'); }} 
                 className="bg-[#059669] text-white text-sm font-medium px-4 py-2 rounded-md hover:bg-emerald-700"
@@ -478,7 +420,6 @@ export default function CalculadoraDiarias() {
 
 
 
->>>>>>> main
           </div>
         )}
       </main>
