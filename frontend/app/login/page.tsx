@@ -1,12 +1,14 @@
 'use client';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { verificarUsuario } from '../services/api';
+// Importação corrigida com o nome da função que realmente existe no seu api.ts
+import { fazerLogin } from '../../services/api';
 
 export default function Login() {
   const router = useRouter();
   const [matricula, setMatricula] = useState('');
   const [senha, setSenha] = useState('');
+  const [orgao, setOrgao] = useState(''); // Adicionado o campo Órgão exigido pela sua API
   const [erro, setErro] = useState('');
 
   const handleLogin = async (e: React.FormEvent) => {
@@ -14,46 +16,50 @@ export default function Login() {
     setErro('');
 
     try {
-      const apiUsuario = await verificarUsuario(matricula);
+      // Chama a função fazerLogin que existe no seu api.ts
+      const payloadLogin = {
+        matricula: matricula,
+        senha: senha,
+        orgao: orgao
+      };
+
+      const apiUsuario = await fazerLogin(payloadLogin);
       
       if (!apiUsuario) {
         setErro('Matrícula não encontrada na base de dados.');
         return;
       }
       
-      if (senha === '123') {
-        localStorage.setItem('diarias-auth', 'true');
-        localStorage.setItem('diarias-user-id', apiUsuario.id);
-        
-        const perfilLocalStorage = {
-          id: apiUsuario.id,
-          matricula: apiUsuario.matricula,
-          nomeCompleto: apiUsuario.nomeCompleto || '',
-          orgao: apiUsuario.orgao || '',
-          funcao: apiUsuario.funcao || '',
-          email: apiUsuario.email || '',
-          celular: apiUsuario.celular || ''
-        };
-        
-        localStorage.setItem('diarias-user', JSON.stringify(perfilLocalStorage));
-        
-        const perfilCompleto = Boolean(
-          perfilLocalStorage.nomeCompleto.trim() &&
-          perfilLocalStorage.funcao.trim() &&
-          perfilLocalStorage.email.trim() &&
-          perfilLocalStorage.celular.trim()
-        );
+      // Se a API retornar sucesso e um usuário válido
+      localStorage.setItem('diarias-auth', 'true');
+      localStorage.setItem('diarias-user-id', apiUsuario.id);
+      
+      const perfilLocalStorage = {
+        id: apiUsuario.id,
+        matricula: apiUsuario.matricula,
+        nomeCompleto: apiUsuario.nomeCompleto || '',
+        orgao: apiUsuario.orgao || '',
+        funcao: apiUsuario.funcao || '',
+        email: apiUsuario.email || '',
+        celular: apiUsuario.celular || ''
+      };
+      
+      localStorage.setItem('diarias-user', JSON.stringify(perfilLocalStorage));
+      
+      const perfilCompleto = Boolean(
+        perfilLocalStorage.nomeCompleto.trim() &&
+        perfilLocalStorage.funcao.trim() &&
+        perfilLocalStorage.email.trim() &&
+        perfilLocalStorage.celular.trim()
+      );
 
-        if (perfilCompleto) {
-          router.push('/');
-        } else {
-          router.push('/perfil');
-        }
+      if (perfilCompleto) {
+        router.push('/');
       } else {
-        setErro('Credenciais inválidas. Tente novamente.');
+        router.push('/perfil');
       }
     } catch (err: any) {
-      setErro('Falha na comunicação com o servidor.');
+      setErro(err.message || 'Credenciais inválidas ou falha na comunicação.');
     }
   };
 
@@ -73,7 +79,7 @@ export default function Login() {
 
         <div className="text-center mb-8">
           <h2 className="text-2xl font-bold text-[#0F2C59] mb-1">Acesso Restrito</h2>
-          <p className="text-sm text-slate-500">Insira a sua matrícula e senha para aceder ao sistema de diárias.</p>
+          <p className="text-sm text-slate-500">Insira a sua matrícula, senha e órgão para aceder ao sistema.</p>
         </div>
 
         {erro && (
@@ -90,6 +96,18 @@ export default function Login() {
               value={matricula} 
               onChange={(e) => setMatricula(e.target.value)} 
               placeholder="Ex: 000001"
+              required
+              className="w-full p-3 border border-slate-300 rounded-md focus:ring-2 focus:ring-[#0F2C59] focus:outline-none transition-all" 
+            />
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-slate-700 mb-1">Órgão</label>
+            <input 
+              type="text" 
+              value={orgao} 
+              onChange={(e) => setOrgao(e.target.value)} 
+              placeholder="Ex: SEDUC"
               required
               className="w-full p-3 border border-slate-300 rounded-md focus:ring-2 focus:ring-[#0F2C59] focus:outline-none transition-all" 
             />
