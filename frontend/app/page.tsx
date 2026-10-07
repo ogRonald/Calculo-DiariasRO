@@ -170,7 +170,6 @@ export default function CalculadoraDiarias() {
       <header className="relative z-10 bg-[#0F2C59] text-white p-4 shadow-md border-b-4 border-[#059669]">
         <div className="max-w-5xl mx-auto flex justify-between items-center">
           <div className="flex items-center space-x-3">
-<<<<<<< HEAD
             <div className="w-10 h-10 bg-[#059669] rounded-lg flex items-center justify-center font-bold text-lg text-white shadow-sm">RO</div>
             <div>
               <h1 className="font-bold text-lg sm:text-xl leading-tight">Governo do Estado de Rondônia</h1>
@@ -179,11 +178,9 @@ export default function CalculadoraDiarias() {
           </div>
           <div className="flex items-center gap-3">
             <span className="hidden sm:inline-block text-xs bg-[#059669] text-white px-3 py-1 rounded-full font-medium">Módulo Oficial</span>
-=======
             <img src="/SICADI-03.png" alt="Logo SICADI" className="h-14 w-auto object-contain" />
             </div>
           <div className="flex items-center gap-3">
->>>>>>> main
             <button onClick={() => router.push('/perfil?editar=true')} className="text-xs bg-white/10 hover:bg-white/20 text-white px-3 py-1.5 rounded-md font-medium transition-colors">Meu perfil</button>
             <button onClick={handleLogout} className="text-xs bg-white/10 hover:bg-white/20 text-white px-3 py-1.5 rounded-md font-medium transition-colors">Sair</button>
           </div>
