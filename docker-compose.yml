@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: diarias_postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: admin_password
+      POSTGRES_DB: DiariasRO_Db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    # Garante que o Postgres está pronto para receber conexões
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d DiariasRO_Db"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  api:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: diarias_api
+    ports:
+      - "5211:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      # Força o .NET a escutar em todas as interfaces na porta 8080 do container
+      - ASPNETCORE_URLS=http://+:8080
+      - ConnectionStrings__DefaultConnection=Host=db;Database=DiariasRO_Db;Username=postgres;Password=admin_password
+    depends_on:
+      db:
+        condition: service_healthy # Espera o Postgres estar 100% pronto antes de ligar a API
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: diarias_frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - api
+
+volumes:
+  postgres_data:
