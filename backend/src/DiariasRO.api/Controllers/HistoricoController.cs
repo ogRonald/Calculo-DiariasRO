@@ -6,6 +6,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DiariasRO.api.Controllers;
 
+
+[Authorize]
 [ApiController]
 [Route("api/v1/historico")]
 public class HistoricoController : ControllerBase

@@ -6,6 +6,7 @@ using DiariasRO.api.Dtos;
 
 namespace DiariasRO.api.Controllers;
 
+[Authorize]
 [ApiController]
 [Route("api/v1/[controller]")]
 public class DiariasController : ControllerBase
