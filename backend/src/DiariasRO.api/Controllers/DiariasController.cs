@@ -3,6 +3,7 @@ using DiariasRO.Domain.Services;
 using DiariasRO.Domain.ValueObjects;
 using DiariasRO.Domain.Strategies;
 using DiariasRO.api.Dtos;
+using Microsoft.AspNetCore.Authorization;
 
 namespace DiariasRO.api.Controllers;
 

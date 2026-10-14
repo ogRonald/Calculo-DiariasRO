@@ -359,3 +359,4 @@ C:\Users\03478537223\SICADI\backend\src\DiariasRO.api\bin\Debug\net10.0\Microsof
 C:\Users\03478537223\SICADI\backend\src\DiariasRO.api\bin\Debug\net10.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\03478537223\SICADI\backend\src\DiariasRO.api\bin\Debug\net10.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\03478537223\SICADI\backend\src\DiariasRO.api\bin\Debug\net10.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\03478537223\SICADI\backend\src\DiariasRO.api\obj\Debug\net10.0\DiariasRO.api.sourcelink.json
