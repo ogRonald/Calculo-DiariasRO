@@ -31,3 +31,14 @@ C:\Users\03478537223\DiariasRO\src\DiariasRO.Domain\obj\Debug\net10.0\DiariasRO.
 C:\Users\03478537223\DiariasRO\src\DiariasRO.Domain\obj\Debug\net10.0\refint\DiariasRO.Domain.dll
 C:\Users\03478537223\DiariasRO\src\DiariasRO.Domain\obj\Debug\net10.0\DiariasRO.Domain.pdb
 C:\Users\03478537223\DiariasRO\src\DiariasRO.Domain\obj\Debug\net10.0\ref\DiariasRO.Domain.dll
+C:\Users\03478537223\SICADI\backend\src\DiariasRO.Domain\bin\Debug\net10.0\DiariasRO.Domain.deps.json
+C:\Users\03478537223\SICADI\backend\src\DiariasRO.Domain\bin\Debug\net10.0\DiariasRO.Domain.dll
+C:\Users\03478537223\SICADI\backend\src\DiariasRO.Domain\bin\Debug\net10.0\DiariasRO.Domain.pdb
+C:\Users\03478537223\SICADI\backend\src\DiariasRO.Domain\obj\Debug\net10.0\DiariasRO.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\03478537223\SICADI\backend\src\DiariasRO.Domain\obj\Debug\net10.0\DiariasRO.Domain.AssemblyInfoInputs.cache
+C:\Users\03478537223\SICADI\backend\src\DiariasRO.Domain\obj\Debug\net10.0\DiariasRO.Domain.AssemblyInfo.cs
+C:\Users\03478537223\SICADI\backend\src\DiariasRO.Domain\obj\Debug\net10.0\DiariasRO.Domain.csproj.CoreCompileInputs.cache
+C:\Users\03478537223\SICADI\backend\src\DiariasRO.Domain\obj\Debug\net10.0\DiariasRO.Domain.dll
+C:\Users\03478537223\SICADI\backend\src\DiariasRO.Domain\obj\Debug\net10.0\refint\DiariasRO.Domain.dll
+C:\Users\03478537223\SICADI\backend\src\DiariasRO.Domain\obj\Debug\net10.0\DiariasRO.Domain.pdb
+C:\Users\03478537223\SICADI\backend\src\DiariasRO.Domain\obj\Debug\net10.0\ref\DiariasRO.Domain.dll

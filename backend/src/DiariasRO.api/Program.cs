@@ -1,6 +1,9 @@
 using DiariasRO.api.Data;
 using DiariasRO.Domain.Services;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 
@@ -29,6 +32,36 @@ builder.Services.AddCors(options =>
     });
 });
 
+
+// ... outras configurações do builder ...
+
+// 1. Lendo as configurações do appsettings.json
+var jwtKey = builder.Configuration["Jwt:Key"] ?? throw new InvalidOperationException("JWT Key is missing");
+var key = Encoding.ASCII.GetBytes(jwtKey);
+
+// 2. Configurando a Autenticação
+builder.Services.AddAuthentication(x =>
+{
+    x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+})
+.AddJwtBearer(x =>
+{
+    x.RequireHttpsMetadata = false; // Em produção (HTTPS), mude para true
+    x.SaveToken = true;
+    x.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuerSigningKey = true,
+        IssuerSigningKey = new SymmetricSecurityKey(key),
+        ValidateIssuer = true,
+        ValidIssuer = builder.Configuration["Jwt:Issuer"],
+        ValidateAudience = true,
+        ValidAudience = builder.Configuration["Jwt:Audience"]
+    };
+});
+
+builder.Services.AddAuthorization();
+
 var app = builder.Build();
 
 using (var scope = app.Services.CreateScope())
@@ -45,6 +78,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseRouting();
 app.UseCors("PermitirFrontend");
+app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
 
