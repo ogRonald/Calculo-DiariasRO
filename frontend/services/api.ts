@@ -105,3 +105,37 @@ export async function obterHistorico(usuarioId: string) {
   });
   return tratarResposta(response);
 }
+
+/**
+ * Busca todos os cálculos com status 'Pendente' (Apenas para Gestores)
+ */
+export async function obterPendentes() {
+  const response = await fetch(`${API_URL}/Gestao/pendentes`, {
+    method: 'GET',
+    headers: getAuthHeaders(),
+  });
+  return tratarResposta(response);
+}
+
+/**
+ * Aprova uma diária pendente
+ */
+export async function aprovarDiaria(id: string) {
+  const response = await fetch(`${API_URL}/Gestao/${id}/aprovar`, {
+    method: 'PUT',
+    headers: getAuthHeaders(),
+  });
+  return tratarResposta(response);
+}
+
+/**
+ * Devolve uma diária exigindo um motivo de correção
+ */
+export async function devolverDiaria(id: string, motivoDevolucao: string) {
+  const response = await fetch(`${API_URL}/Gestao/${id}/devolver`, {
+    method: 'PUT',
+    headers: getAuthHeaders(),
+    body: JSON.stringify({ motivoDevolucao }),
+  });
+  return tratarResposta(response);
+}

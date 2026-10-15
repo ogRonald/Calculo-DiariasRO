@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DiariasRO.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+29a0b00ec570595d20cc14ccb701653c5250869e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+645e9c713a74bc0c68b593ecce8390a326f0cb76")]
 [assembly: System.Reflection.AssemblyProductAttribute("DiariasRO.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DiariasRO.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
