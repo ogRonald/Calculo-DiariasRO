@@ -1,6 +1,7 @@
 using DiariasRO.api.Data;
 using DiariasRO.api.Dtos;
 using DiariasRO.api.Models;
+using DiariasRO.api.Services; // 1. Adicionado para usar o TokenService
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -12,11 +13,14 @@ namespace DiariasRO.api.Controllers;
 public class AuthController : ControllerBase
 {
     private readonly DiariasDbContext _db;
+    private readonly IConfiguration _config; // 2. Adicionado para ler as configurações do appsettings.json
     private readonly PasswordHasher<Usuario> _passwordHasher = new();
 
-    public AuthController(DiariasDbContext db)
+    // 3. IConfiguration injetado no construtor
+    public AuthController(DiariasDbContext db, IConfiguration config) 
     {
         _db = db;
+        _config = config;
     }
 
     [HttpPost("login")]
@@ -41,7 +45,8 @@ public class AuthController : ControllerBase
             {
                 Matricula = matricula,
                 Orgao = orgao,
-                SenhaHash = _passwordHasher.HashPassword(null!, dto.Senha)
+                SenhaHash = _passwordHasher.HashPassword(null!, dto.Senha),
+                NivelAcesso = NivelAcesso.Operador // FASE 2: Garantimos que quem entra pela 1ª vez é Operador
             };
 
             _db.Usuarios.Add(usuario);
@@ -57,7 +62,17 @@ public class AuthController : ControllerBase
                 return Unauthorized(new { erro = "Matrícula ou senha inválida." });
         }
 
-        return Ok(ToPerfil(usuario));
+        // ==========================================
+        // FASE 2: GERAÇÃO DO TOKEN JWT
+        // ==========================================
+        var token = TokenService.GerarToken(usuario, _config);
+
+        // Devolvemos um objeto que contém o token de segurança e os dados do utilizador
+        return Ok(new 
+        { 
+            token = token, 
+            usuario = ToPerfil(usuario) 
+        });
     }
 
     private static PerfilDto ToPerfil(Usuario usuario) => new(

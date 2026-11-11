@@ -6,6 +6,7 @@ public class Usuario
     public string Matricula { get; set; } = string.Empty;
     public string SenhaHash { get; set; } = string.Empty;
     public string Orgao { get; set; } = string.Empty;
+    public NivelAcesso NivelAcesso { get; set; } = NivelAcesso.Operador;
     public string NomeCompleto { get; set; } = string.Empty;
     public string Funcao { get; set; } = string.Empty;
     public string Email { get; set; } = string.Empty;
