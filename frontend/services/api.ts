@@ -1,17 +1,19 @@
 const API_URL = 'http://localhost:5211/api/v1';
 
 /**
- * Função utilitária para ir buscar o token ao localStorage 
+ * Função utilitária para buscar o token no localStorage 
  * e montar o cabeçalho de Autorização para a API.
  */
 function getAuthHeaders() {
-  const token = localStorage.getItem('diarias-token');
   const headers: Record<string, string> = {
     'Content-Type': 'application/json',
   };
 
-  if (token) {
-    headers['Authorization'] = `Bearer ${token}`;
+  if (typeof window !== 'undefined') {
+    const token = localStorage.getItem('diarias-token');
+    if (token) {
+      headers['Authorization'] = `Bearer ${token}`;
+    }
   }
 
   return headers;
@@ -21,7 +23,7 @@ async function tratarResposta(response: Response) {
   if (!response.ok) {
     let mensagem = 'Erro na comunicação com a API.';
     
-    // Tratamento específico para erros de Token JWT (Fase 2)
+    // Tratamento específico para erros de Token JWT
     if (response.status === 401) mensagem = 'Não autorizado. A sua sessão expirou, faça login novamente.';
     if (response.status === 403) mensagem = 'Acesso negado. O seu perfil não tem permissão para esta ação.';
 
@@ -47,11 +49,11 @@ export async function fazerLogin(payload: { matricula: string; senha: string; or
   const data = await tratarResposta(response);
   
   // Guarda o token devolvido pela API no navegador
-  if (data.token) {
+  if (data.token && typeof window !== 'undefined') {
     localStorage.setItem('diarias-token', data.token);
   }
   
-  // Retorna apenas os dados do utilizador para o frontend usar
+  // Retorna os dados do utilizador para o frontend usar
   return data.usuario || data;
 }
 
@@ -107,10 +109,42 @@ export async function obterHistorico(usuarioId: string) {
 }
 
 /**
+ * Busca todas as diárias (Pendentes, Aprovadas, Devolvidas e Rejeitadas) para o Painel da Gestão
+ */
+export async function obterTodasDiariasGestao(): Promise<any[]> {
+  try {
+    const response = await fetch(`${API_URL}/Gestao/todas`, {
+      method: 'GET',
+      headers: getAuthHeaders(),
+    });
+
+    if (response.ok) {
+      return await response.json();
+    }
+  } catch (err) {
+    console.error('Falha ao obter todas as diárias da gestão:', err);
+  }
+
+  // Fallback caso a rota ainda não esteja disponível
+  return await obterPendentes();
+}
+
+/**
  * Busca todos os cálculos com status 'Pendente' (Apenas para Gestores)
  */
 export async function obterPendentes() {
   const response = await fetch(`${API_URL}/Gestao/pendentes`, {
+    method: 'GET',
+    headers: getAuthHeaders(),
+  });
+  return tratarResposta(response);
+}
+
+/**
+ * Busca uma solicitação individual pelo ID
+ */
+export async function obterDiariaPorId(id: string) {
+  const response = await fetch(`${API_URL}/Gestao/${id}`, {
     method: 'GET',
     headers: getAuthHeaders(),
   });
@@ -136,6 +170,18 @@ export async function devolverDiaria(id: string, motivoDevolucao: string) {
     method: 'PUT',
     headers: getAuthHeaders(),
     body: JSON.stringify({ motivoDevolucao }),
+  });
+  return tratarResposta(response);
+}
+
+/**
+ * Rejeita / Nega uma diária
+ */
+export async function rejeitarDiaria(id: string, motivoDevolucao?: string) {
+  const response = await fetch(`${API_URL}/Gestao/${id}/rejeitar`, {
+    method: 'PUT',
+    headers: getAuthHeaders(),
+    body: JSON.stringify({ motivoDevolucao: motivoDevolucao || 'Solicitação recusada pelo gestor.' }),
   });
   return tratarResposta(response);
 }
