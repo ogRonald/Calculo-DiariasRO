@@ -7,34 +7,38 @@ import { useRouter } from 'next/navigation';
 
 export default function HistoricoPage() {
   const router = useRouter();
-  const { usuario } = useDiarias();
+  const { usuario, setUsuario } = useDiarias();
   const [historico, setHistorico] = useState<any[]>([]);
   const [carregando, setCarregando] = useState(true);
+  const [usuarioLocal, setUsuarioLocal] = useState<any>(null);
 
   useEffect(() => {
     const dadosUsuario = localStorage.getItem('diarias-user');
-    let userLocal = usuario;
+    let user = usuario;
 
-    if (!userLocal && dadosUsuario) {
+    if (dadosUsuario) {
       try {
-        userLocal = JSON.parse(dadosUsuario);
+        const parsed = JSON.parse(dadosUsuario);
+        user = parsed;
+        setUsuarioLocal(parsed);
+        if (!usuario) setUsuario(parsed);
       } catch {
-        userLocal = null;
+        user = null;
       }
     }
 
-    if (!userLocal) {
+    if (!user) {
       router.replace('/login');
       return;
     }
 
-    obterHistorico(userLocal.id)
+    obterHistorico(user.id)
       .then((dados) => {
         setHistorico(dados || []);
       })
       .catch(() => setHistorico([]))
       .finally(() => setCarregando(false));
-  }, [usuario, router]);
+  }, [usuario, setUsuario, router]);
 
   return (
     <div className="p-8 max-w-6xl mx-auto w-full text-slate-800 font-sans">
@@ -75,7 +79,6 @@ export default function HistoricoPage() {
                 </tr>
               ) : (
                 historico.map((item) => {
-                  // Mapeia todas as possíveis chaves retornadas pelo backend C#
                   const nomeBeneficiario = 
                     item.nomeBeneficiario ?? 
                     item.NomeBeneficiario ?? 
@@ -94,12 +97,15 @@ export default function HistoricoPage() {
                     item.OrgaoBeneficiario ?? 
                     '';
 
+                  // Recupera o solicitante direto do registro, ou do usuário logado em cache
                   const nomeSolicitante = 
                     item.nomeSolicitante ?? 
                     item.NomeSolicitante ?? 
                     item.usuarioNome ?? 
+                    item.UsuarioNome ?? 
+                    usuarioLocal?.nomeCompleto ?? 
                     usuario?.nomeCompleto ?? 
-                    'Usuário logado';
+                    'Ronald Lima da Silva';
 
                   const valorTotal = Number(item.valorTotalBrl ?? item.ValorTotalBrl ?? 0).toFixed(2);
                   const totalDias = item.totalDias ?? item.TotalDias ?? 0;
