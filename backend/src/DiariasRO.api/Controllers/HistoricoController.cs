@@ -7,13 +7,13 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace DiariasRO.api.Controllers;
 
-
 [Authorize]
 [ApiController]
 [Route("api/v1/historico")]
 public class HistoricoController : ControllerBase
 {
     private readonly DiariasDbContext _db;
+
     public HistoricoController(DiariasDbContext db) => _db = db;
 
     [HttpGet("{usuarioId:guid}")]
@@ -22,24 +22,37 @@ public class HistoricoController : ControllerBase
         var itens = await _db.Historicos
             .Where(h => h.UsuarioId == usuarioId)
             .OrderByDescending(h => h.CriadoEm)
-            // Atualizado para retornar o NomeBeneficiario
-            .Select(h => new { h.Id, h.NomeBeneficiario, h.Destino, h.TotalDias, h.ValorUnitarioBrl, h.ValorTotalBrl, h.CriadoEm })
+            .Select(h => new
+            {
+                h.Id,
+                h.NomeBeneficiario,
+                h.Destino,
+                h.TotalDias,
+                h.ValorUnitarioBrl,
+                h.ValorTotalBrl,
+                h.CriadoEm,
+                h.Status
+            })
             .ToListAsync();
+
         return Ok(itens);
     }
 
     [HttpPost]
     public async Task<IActionResult> Salvar([FromBody] SalvarHistoricoDto dto)
     {
-        var usuarioExiste = await _db.Usuarios.AnyAsync(u => u.Id == dto.UsuarioId);
-        if (!usuarioExiste) return NotFound(new { erro = "Usuário operador não encontrado." });
+        var usuarioExiste = await _db.Usuarios
+            .AnyAsync(u => u.Id == dto.UsuarioId);
+
+        if (!usuarioExiste)
+            return NotFound(new { erro = "Usuário operador não encontrado." });
 
         var item = new HistoricoCalculo
         {
             UsuarioId = dto.UsuarioId,
-            NomeBeneficiario = dto.NomeBeneficiario,           // Mapeado
-            MatriculaBeneficiario = dto.MatriculaBeneficiario, // Mapeado
-            OrgaoBeneficiario = dto.OrgaoBeneficiario,         // Mapeado
+            NomeBeneficiario = dto.NomeBeneficiario,
+            MatriculaBeneficiario = dto.MatriculaBeneficiario,
+            OrgaoBeneficiario = dto.OrgaoBeneficiario,
             Destino = dto.Destino,
             DataHoraInicio = dto.DataHoraInicio,
             DataHoraFim = dto.DataHoraFim,
@@ -47,9 +60,10 @@ public class HistoricoController : ControllerBase
             ValorUnitarioBrl = dto.ValorUnitarioBrl,
             ValorTotalBrl = dto.ValorTotalBrl
         };
-        
+
         _db.Historicos.Add(item);
         await _db.SaveChangesAsync();
+
         return Ok(item);
     }
 }
