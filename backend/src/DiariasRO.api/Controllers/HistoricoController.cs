@@ -7,7 +7,6 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace DiariasRO.api.Controllers;
 
-
 [Authorize]
 [ApiController]
 [Route("api/v1/historico")]
@@ -22,9 +21,25 @@ public class HistoricoController : ControllerBase
         var itens = await _db.Historicos
             .Where(h => h.UsuarioId == usuarioId)
             .OrderByDescending(h => h.CriadoEm)
-            // Atualizado para retornar o NomeBeneficiario
-            .Select(h => new { h.Id, h.NomeBeneficiario, h.Destino, h.TotalDias, h.ValorUnitarioBrl, h.ValorTotalBrl, h.CriadoEm })
+            .Select(h => new 
+            { 
+                h.Id, 
+                h.NomeBeneficiario,
+                h.MatriculaBeneficiario,
+                h.OrgaoBeneficiario,
+                h.Destino,
+                h.DataHoraInicio,
+                h.DataHoraFim,
+                h.TotalDias, 
+                h.ValorUnitarioBrl, 
+                h.ValorTotalBrl, 
+                h.CriadoEm,
+                h.Status,
+                h.MotivoDevolucao,
+                h.DataAprovacao
+            })
             .ToListAsync();
+
         return Ok(itens);
     }
 
@@ -37,9 +52,9 @@ public class HistoricoController : ControllerBase
         var item = new HistoricoCalculo
         {
             UsuarioId = dto.UsuarioId,
-            NomeBeneficiario = dto.NomeBeneficiario,           // Mapeado
-            MatriculaBeneficiario = dto.MatriculaBeneficiario, // Mapeado
-            OrgaoBeneficiario = dto.OrgaoBeneficiario,         // Mapeado
+            NomeBeneficiario = dto.NomeBeneficiario,
+            MatriculaBeneficiario = dto.MatriculaBeneficiario,
+            OrgaoBeneficiario = dto.OrgaoBeneficiario,
             Destino = dto.Destino,
             DataHoraInicio = dto.DataHoraInicio,
             DataHoraFim = dto.DataHoraFim,
