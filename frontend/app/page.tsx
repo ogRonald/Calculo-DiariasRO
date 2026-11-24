@@ -88,8 +88,8 @@ export default function NovaSimulacaoPage() {
   return (
     <div className="p-8 max-w-5xl mx-auto w-full text-slate-800 font-sans">
       <div className="mb-8">
-        <h1 className="text-3xl font-bold text-slate-900 mb-2">Nova simulação de diárias</h1>
-        <p className="text-slate-500">Preencha os dados abaixo para visualizar uma estimativa de diárias de viagem.</p>
+        <h1 className="text-3xl font-bold text-slate-900 mb-2">Preencha os dados abaixo para visualizar uma estimativa de diárias de viagem.</h1>
+        <p className="text-slate-500"></p>
       </div>
 
       <div className="bg-slate-900 text-white p-8 rounded-xl mb-8 flex flex-col md:flex-row justify-between items-center gap-4 shadow-md">
@@ -109,7 +109,7 @@ export default function NovaSimulacaoPage() {
 
         <div className="bg-white border border-slate-200 p-8 rounded-xl shadow-sm">
           <div className="flex items-center gap-3 mb-6">
-            <div className="w-8 h-8 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center font-bold text-sm">01</div>
+            
             <div>
               <h3 className="font-bold text-slate-900">Dados do beneficiário</h3>
               <p className="text-xs text-slate-500">Identifique o servidor que receberá as diárias.</p>
@@ -133,7 +133,7 @@ export default function NovaSimulacaoPage() {
 
         <div className="bg-white border border-slate-200 p-8 rounded-xl shadow-sm">
           <div className="flex items-center gap-3 mb-6">
-            <div className="w-8 h-8 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center font-bold text-sm">02</div>
+            
             <div>
               <h3 className="font-bold text-slate-900">Informações da viagem</h3>
               <p className="text-xs text-slate-500">Configure período, destino e categoria do servidor.</p>
@@ -176,7 +176,7 @@ export default function NovaSimulacaoPage() {
 
         <div className="bg-white border border-slate-200 p-8 rounded-xl shadow-sm">
           <div className="flex items-center gap-3 mb-6">
-            <div className="w-8 h-8 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center font-bold text-sm">03</div>
+            
             <div>
               <h3 className="font-bold text-slate-900">Regras e condições</h3>
               <p className="text-xs text-slate-500">Verifique as condições antes de gerar sua simulação.</p>
@@ -214,7 +214,7 @@ export default function NovaSimulacaoPage() {
           </div>
 
           <div className="mt-8 pt-6 border-t border-slate-100 flex flex-col sm:flex-row justify-between items-center gap-4">
-            <p className="text-xs text-slate-400">Os valores serão calculados conforme as regras cadastradas.</p>
+
             <button onClick={handleCalcular} className="bg-emerald-600 hover:bg-emerald-700 text-white font-medium px-8 py-3 rounded-lg transition-colors w-full sm:w-auto shadow-sm">
               Simular cálculo →
             </button>
