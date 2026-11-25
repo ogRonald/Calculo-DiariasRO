@@ -88,19 +88,11 @@ export default function NovaSimulacaoPage() {
   return (
     <div className="p-8 max-w-5xl mx-auto w-full text-slate-800 font-sans">
       <div className="mb-8">
-        <h1 className="text-3xl font-bold text-slate-900 mb-2">Preencha os dados abaixo para visualizar uma estimativa de diárias de viagem.</h1>
+         
         <p className="text-slate-500"></p>
       </div>
 
-      <div className="bg-slate-900 text-white p-8 rounded-xl mb-8 flex flex-col md:flex-row justify-between items-center gap-4 shadow-md">
-        <div>
-          <h2 className="text-xl font-bold mb-1">Cálculo mais simples, transparente e organizado.</h2>
-          <p className="text-slate-300 text-sm">Simule valores em poucos passos e mantenha seu histórico de consultas.</p>
-        </div>
-        <div className="bg-emerald-50 text-emerald-700 px-4 py-2 rounded-full text-sm font-semibold whitespace-nowrap">
-          01 de 02 • Simulação
-        </div>
-      </div>
+
 
       <div className="space-y-6">
         {erroValidacao && (
