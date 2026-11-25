@@ -185,3 +185,27 @@ export async function rejeitarDiaria(id: string, motivoDevolucao?: string) {
   });
   return tratarResposta(response);
 }
+
+
+/**
+ * Lista todos os usuários cadastrados (Apenas para Administradores)
+ */
+export async function listarUsuariosAdmin(): Promise<any[]> {
+  const response = await fetch(`${API_URL}/admin/usuarios`, {
+    method: 'GET',
+    headers: getAuthHeaders(),
+  });
+  return tratarResposta(response);
+}
+
+/**
+ * Altera o nível de acesso de um usuário ('Operador' | 'Gestor' | 'Admin')
+ */
+export async function alterarNivelAcessoUsuario(id: string, nivelAcesso: string) {
+  const response = await fetch(`${API_URL}/admin/usuarios/${id}/nivel-acesso`, {
+    method: 'PUT',
+    headers: getAuthHeaders(),
+    body: JSON.stringify({ nivelAcesso }),
+  });
+  return tratarResposta(response);
+}
