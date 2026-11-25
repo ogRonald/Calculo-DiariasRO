@@ -1,7 +1,7 @@
 using DiariasRO.api.Data;
 using DiariasRO.api.Dtos;
 using DiariasRO.api.Models;
-using DiariasRO.api.Services; // 1. Adicionado para usar o TokenService
+using DiariasRO.api.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -13,11 +13,10 @@ namespace DiariasRO.api.Controllers;
 public class AuthController : ControllerBase
 {
     private readonly DiariasDbContext _db;
-    private readonly IConfiguration _config; // 2. Adicionado para ler as configurações do appsettings.json
+    private readonly IConfiguration _config;
     private readonly PasswordHasher<Usuario> _passwordHasher = new();
 
-    // 3. IConfiguration injetado no construtor
-    public AuthController(DiariasDbContext db, IConfiguration config) 
+    public AuthController(DiariasDbContext db, IConfiguration config)
     {
         _db = db;
         _config = config;
@@ -35,18 +34,21 @@ public class AuthController : ControllerBase
 
         var matricula = dto.Matricula.Trim();
         var orgao = dto.Orgao.Trim();
+        var matriculaAdminMestre = _config["Admin:Matricula"] ?? "0000001";
+
         var usuario = await _db.Usuarios.FirstOrDefaultAsync(u => u.Matricula == matricula);
 
-        // Para o protótipo da faculdade, o primeiro acesso cria o usuário.
-        // Nos acessos seguintes, a senha é validada normalmente.
         if (usuario is null)
         {
+            var existeAlgumAdmin = await _db.Usuarios.AnyAsync(u => u.NivelAcesso == NivelAcesso.Admin);
+            var ehAdminInicial = !existeAlgumAdmin && matricula == matriculaAdminMestre;
+
             usuario = new Usuario
             {
                 Matricula = matricula,
                 Orgao = orgao,
                 SenhaHash = _passwordHasher.HashPassword(null!, dto.Senha),
-                NivelAcesso = NivelAcesso.Operador // FASE 2: Garantimos que quem entra pela 1ª vez é Operador
+                NivelAcesso = ehAdminInicial ? NivelAcesso.Admin : NivelAcesso.Operador
             };
 
             _db.Usuarios.Add(usuario);
@@ -60,28 +62,36 @@ public class AuthController : ControllerBase
             var resultado = _passwordHasher.VerifyHashedPassword(usuario, usuario.SenhaHash, dto.Senha);
             if (resultado == PasswordVerificationResult.Failed)
                 return Unauthorized(new { erro = "Matrícula ou senha inválida." });
+
+            // Garante que a matrícula mestre receba Admin caso ainda não exista nenhum Admin no banco
+            if (matricula == matriculaAdminMestre && usuario.NivelAcesso != NivelAcesso.Admin)
+            {
+                var existeAlgumAdmin = await _db.Usuarios.AnyAsync(u => u.NivelAcesso == NivelAcesso.Admin);
+                if (!existeAlgumAdmin)
+                {
+                    usuario.NivelAcesso = NivelAcesso.Admin;
+                    await _db.SaveChangesAsync();
+                }
+            }
         }
 
-        // ==========================================
-        // FASE 2: GERAÇÃO DO TOKEN JWT
-        // ==========================================
         var token = TokenService.GerarToken(usuario, _config);
 
-        // Devolvemos um objeto que contém o token de segurança e os dados do utilizador
-        return Ok(new 
-        { 
-            token = token, 
-            usuario = ToPerfil(usuario) 
+        return Ok(new
+        {
+            token,
+            usuario = new
+            {
+                usuario.Id,
+                usuario.Matricula,
+                usuario.Orgao,
+                usuario.NomeCompleto,
+                usuario.Funcao,
+                usuario.Email,
+                usuario.Celular,
+                NivelAcesso = usuario.NivelAcesso.ToString(),
+                Role = usuario.NivelAcesso.ToString()
+            }
         });
     }
-
-    private static PerfilDto ToPerfil(Usuario usuario) => new(
-        usuario.Id,
-        usuario.Matricula,
-        usuario.Orgao,
-        usuario.NomeCompleto,
-        usuario.Funcao,
-        usuario.Email,
-        usuario.Celular
-    );
 }

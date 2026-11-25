@@ -122,34 +122,40 @@ public sealed class DatabaseInitializer
 
     public async Task InitializeAsync()
     {
-        await _db.Database.EnsureCreatedAsync();
+        // Aplica todas as Migrations do EF Core na ordem correta (cria tabelas e todas as colunas atualizadas)
+        var migrations = _db.Database.GetMigrations();
+        if (migrations.Any())
+        {
+            await _db.Database.MigrateAsync();
+        }
+        else
+        {
+            await _db.Database.EnsureCreatedAsync();
+        }
 
-        // 1. Cria a tabela de Usuarios primeiro
+        // Garante que as colunas novas existam mesmo se o banco foi criado antes das migrations
         await _db.Database.ExecuteSqlRawAsync(@"
-            CREATE TABLE IF NOT EXISTS Usuarios (
-                Id VARCHAR(36) NOT NULL PRIMARY KEY,
-                Nome TEXT NOT NULL,
-                Email TEXT NOT NULL
-            );");
+            DO $$
+            BEGIN
+                IF EXISTS (SELECT 1 FROM information_schema.tables WHERE table_name = 'Usuarios') THEN
+                    ALTER TABLE ""Usuarios"" ADD COLUMN IF NOT EXISTS ""NivelAcesso"" text NOT NULL DEFAULT 'Servidor';
+                    ALTER TABLE ""Usuarios"" ADD COLUMN IF NOT EXISTS ""Matricula"" text NOT NULL DEFAULT '';
+                    ALTER TABLE ""Usuarios"" ADD COLUMN IF NOT EXISTS ""Orgao"" text NOT NULL DEFAULT '';
+                    ALTER TABLE ""Usuarios"" ADD COLUMN IF NOT EXISTS ""Funcao"" text NOT NULL DEFAULT '';
+                    ALTER TABLE ""Usuarios"" ADD COLUMN IF NOT EXISTS ""Celular"" text NOT NULL DEFAULT '';
+                END IF;
 
-        // 2. Cria a tabela Historicos referenciando Usuarios
-        await _db.Database.ExecuteSqlRawAsync(@"
-            CREATE TABLE IF NOT EXISTS Historicos (
-                Id VARCHAR(36) NOT NULL PRIMARY KEY, 
-                UsuarioId VARCHAR(36) NOT NULL, 
-                Destino TEXT NOT NULL, 
-                DataHoraInicio TIMESTAMP NOT NULL, 
-                DataHoraFim TIMESTAMP NOT NULL, 
-                TotalDias INT NOT NULL, 
-                ValorUnitarioBrl NUMERIC(18,2) NOT NULL, 
-                ValorTotalBrl NUMERIC(18,2) NOT NULL, 
-                CriadoEm TIMESTAMP NOT NULL, 
-                CONSTRAINT FK_Historicos_Usuarios_UsuarioId FOREIGN KEY (UsuarioId) REFERENCES Usuarios (Id) ON DELETE CASCADE
-            );");
-
-        // 3. Cria o índice
-        await _db.Database.ExecuteSqlRawAsync(@"
-            CREATE INDEX IF NOT EXISTS IX_Historicos_UsuarioId ON Historicos (UsuarioId);
+                IF EXISTS (SELECT 1 FROM information_schema.tables WHERE table_name = 'Historicos') THEN
+                    ALTER TABLE ""Historicos"" ADD COLUMN IF NOT EXISTS ""NomeBeneficiario"" text NOT NULL DEFAULT '';
+                    ALTER TABLE ""Historicos"" ADD COLUMN IF NOT EXISTS ""MatriculaBeneficiario"" text NOT NULL DEFAULT '';
+                    ALTER TABLE ""Historicos"" ADD COLUMN IF NOT EXISTS ""OrgaoBeneficiario"" text NOT NULL DEFAULT '';
+                    ALTER TABLE ""Historicos"" ADD COLUMN IF NOT EXISTS ""Status"" integer NOT NULL DEFAULT 0;
+                    ALTER TABLE ""Historicos"" ADD COLUMN IF NOT EXISTS ""MotivoDevolucao"" text NULL;
+                    ALTER TABLE ""Historicos"" ADD COLUMN IF NOT EXISTS ""GestorAprovadorId"" uuid NULL;
+                    ALTER TABLE ""Historicos"" ADD COLUMN IF NOT EXISTS ""DataAprovacao"" timestamp without time zone NULL;
+                END IF;
+            END
+            $$;
         ");
     }
 }
