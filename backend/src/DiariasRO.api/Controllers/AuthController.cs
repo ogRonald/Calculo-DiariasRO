@@ -1,7 +1,9 @@
+using System.Security.Claims;
 using DiariasRO.api.Data;
 using DiariasRO.api.Dtos;
 using DiariasRO.api.Models;
 using DiariasRO.api.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -21,6 +23,8 @@ public class AuthController : ControllerBase
         _db = db;
         _config = config;
     }
+
+    public record TrocarSenhaObrigatoriaDto(string NovaSenha);
 
     [HttpPost("login")]
     public async Task<IActionResult> Login([FromBody] LoginDto dto)
@@ -48,7 +52,8 @@ public class AuthController : ControllerBase
                 Matricula = matricula,
                 Orgao = orgao,
                 SenhaHash = _passwordHasher.HashPassword(null!, dto.Senha),
-                NivelAcesso = ehAdminInicial ? NivelAcesso.Admin : NivelAcesso.Operador
+                NivelAcesso = ehAdminInicial ? NivelAcesso.Admin : NivelAcesso.Operador,
+                DeveTrocarSenha = false
             };
 
             _db.Usuarios.Add(usuario);
@@ -63,7 +68,6 @@ public class AuthController : ControllerBase
             if (resultado == PasswordVerificationResult.Failed)
                 return Unauthorized(new { erro = "Matrícula ou senha inválida." });
 
-            // Garante que a matrícula mestre receba Admin caso ainda não exista nenhum Admin no banco
             if (matricula == matriculaAdminMestre && usuario.NivelAcesso != NivelAcesso.Admin)
             {
                 var existeAlgumAdmin = await _db.Usuarios.AnyAsync(u => u.NivelAcesso == NivelAcesso.Admin);
@@ -89,9 +93,35 @@ public class AuthController : ControllerBase
                 usuario.Funcao,
                 usuario.Email,
                 usuario.Celular,
+                usuario.DeveTrocarSenha,
                 NivelAcesso = usuario.NivelAcesso.ToString(),
                 Role = usuario.NivelAcesso.ToString()
             }
         });
+    }
+
+    [Authorize]
+    [HttpPost("trocar-senha-obrigatoria")]
+    public async Task<IActionResult> TrocarSenhaObrigatoria([FromBody] TrocarSenhaObrigatoriaDto dto)
+    {
+        if (string.IsNullOrWhiteSpace(dto.NovaSenha) || dto.NovaSenha.Trim().Length < 6)
+            return BadRequest(new { erro = "A nova senha deve ter no mínimo 6 caracteres." });
+
+        if (dto.NovaSenha.Trim() == "SICADI@2026")
+            return BadRequest(new { erro = "A nova senha não pode ser igual à senha temporária padrão." });
+
+        var userIdClaim = User.FindFirstValue(ClaimTypes.NameIdentifier);
+        if (!Guid.TryParse(userIdClaim, out var usuarioId))
+            return Unauthorized(new { erro = "Sessão inválida." });
+
+        var usuario = await _db.Usuarios.FindAsync(usuarioId);
+        if (usuario is null)
+            return NotFound(new { erro = "Usuário não encontrado." });
+
+        usuario.SenhaHash = _passwordHasher.HashPassword(usuario, dto.NovaSenha.Trim());
+        usuario.DeveTrocarSenha = false;
+        await _db.SaveChangesAsync();
+
+        return Ok(new { mensagem = "Senha atualizada com sucesso." });
     }
 }

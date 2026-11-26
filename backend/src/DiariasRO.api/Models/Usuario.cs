@@ -11,5 +11,6 @@ public class Usuario
     public string Funcao { get; set; } = string.Empty;
     public string Email { get; set; } = string.Empty;
     public string Celular { get; set; } = string.Empty;
+    public bool DeveTrocarSenha { get; set; } = false;
     public ICollection<HistoricoCalculo> Historicos { get; set; } = new List<HistoricoCalculo>();
 }

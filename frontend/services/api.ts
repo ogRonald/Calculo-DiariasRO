@@ -209,3 +209,41 @@ export async function alterarNivelAcessoUsuario(id: string, nivelAcesso: string)
   });
   return tratarResposta(response);
 }
+
+
+
+export async function criarUsuarioAdmin(payload: {
+  matricula: string;
+  nomeCompleto: string;
+  orgao: string;
+  funcao?: string;
+  email?: string;
+  celular?: string;
+  nivelAcesso: string;
+}) {
+  const response = await fetch(`${API_URL}/admin/usuarios`, {
+    method: 'POST',
+    headers: getAuthHeaders(),
+    body: JSON.stringify(payload),
+  });
+  return tratarResposta(response);
+}
+
+
+
+export async function resetarSenhaUsuarioAdmin(id: string) {
+  const response = await fetch(`${API_URL}/admin/usuarios/${id}/resetar-senha`, {
+    method: 'PUT',
+    headers: getAuthHeaders(),
+  });
+  return tratarResposta(response);
+}
+
+export async function trocarSenhaObrigatoria(novaSenha: string) {
+  const response = await fetch(`${API_URL}/auth/trocar-senha-obrigatoria`, {
+    method: 'POST',
+    headers: getAuthHeaders(),
+    body: JSON.stringify({ novaSenha }),
+  });
+  return tratarResposta(response);
+}

@@ -143,6 +143,7 @@ public sealed class DatabaseInitializer
                     ALTER TABLE ""Usuarios"" ADD COLUMN IF NOT EXISTS ""Orgao"" text NOT NULL DEFAULT '';
                     ALTER TABLE ""Usuarios"" ADD COLUMN IF NOT EXISTS ""Funcao"" text NOT NULL DEFAULT '';
                     ALTER TABLE ""Usuarios"" ADD COLUMN IF NOT EXISTS ""Celular"" text NOT NULL DEFAULT '';
+                    ALTER TABLE ""Usuarios"" ADD COLUMN IF NOT EXISTS ""DeveTrocarSenha"" boolean NOT NULL DEFAULT false;
                 END IF;
 
                 IF EXISTS (SELECT 1 FROM information_schema.tables WHERE table_name = 'Historicos') THEN

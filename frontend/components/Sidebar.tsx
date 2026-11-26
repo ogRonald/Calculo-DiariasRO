@@ -11,29 +11,31 @@ function SidebarNavegacao() {
   const [nivelAcesso, setNivelAcesso] = useState<string>('Operador');
 
   useEffect(() => {
-    // Prioriza o contexto global; se ainda não carregou, lê do localStorage
-    if (usuario) {
-      const roleCtx = usuario.nivelAcesso ?? usuario.NivelAcesso ?? usuario.role ?? usuario.Role;
-      if (roleCtx) {
-        setNivelAcesso(String(roleCtx));
-        return;
-      }
-    }
-
     const dadosUsuario = localStorage.getItem('diarias-user');
     if (dadosUsuario) {
       try {
         const parsed = JSON.parse(dadosUsuario);
+        if ((parsed.deveTrocarSenha || parsed.DeveTrocarSenha) && pathname !== '/trocar-senha') {
+          window.location.href = '/trocar-senha';
+          return;
+        }
         const roleLocal = parsed.nivelAcesso ?? parsed.NivelAcesso ?? parsed.role ?? parsed.Role ?? 'Operador';
         setNivelAcesso(String(roleLocal));
+        return;
       } catch {
         setNivelAcesso('Operador');
       }
     }
+
+    if (usuario) {
+      const roleCtx = usuario.nivelAcesso ?? usuario.NivelAcesso ?? usuario.role ?? usuario.Role;
+      if (roleCtx) {
+        setNivelAcesso(String(roleCtx));
+      }
+    }
   }, [usuario, pathname]);
 
-  // Oculta a barra lateral na tela de login
-  if (pathname === '/login') {
+  if (pathname === '/login' || pathname === '/trocar-senha') {
     return null;
   }
 
@@ -166,8 +168,7 @@ function SidebarNavegacao() {
 export default function Sidebar() {
   const pathname = usePathname();
 
-  // Não renderiza nem o fallback do Suspense se for a rota /login
-  if (pathname === '/login') {
+  if (pathname === '/login' || pathname === '/trocar-senha') {
     return null;
   }
 
