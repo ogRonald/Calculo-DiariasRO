@@ -150,21 +150,12 @@ function PerfilContent() {
   if (!autenticado) return null;
 
   return (
-    <main
-      className={`relative min-h-screen flex items-center justify-center p-4 sm:p-8 text-slate-800 font-sans ${
-        modoOnboarding ? '' : 'bg-slate-50'
-      }`}
-    >
-      {/* Fundo de login exibido apenas no primeiro acesso (Completar Perfil) */}
-      {modoOnboarding && (
-        <>
-          <div
-            className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
-            style={{ backgroundImage: "url('/background_login.jpg')" }}
-          />
-          <div className="absolute inset-0 z-0 bg-slate-900/40" />
-        </>
-      )}
+   <main className="relative min-h-screen flex items-center justify-center p-4 sm:p-8 text-slate-800 font-sans">
+      <div
+        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: "url('/background_login.jpg')" }}
+      />
+      <div className="absolute inset-0 z-0 bg-slate-900/60" />
 
       {/* MODAL DE CONFIRMAÇÃO DE SENHA */}
       {showModal && (
