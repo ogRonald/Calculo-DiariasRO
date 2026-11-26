@@ -101,7 +101,7 @@ PostgreSQL (Porta externa): localhost:5433 (mapeada para 5432 interna do contêi
 Inicialização Automática: Na primeira subida, o DatabaseInitializer cria automaticamente toda a estrutura de tabelas e colunas no PostgreSQL e popula o sistema com contas padrão para teste.
 
 Credenciais Padrão (Ambiente de Desenvolvimento)
-Todas as contas iniciais criadas pelo Seed utilizam a senha 123456:
+Usuario admin que administra o painel de usuarios:
 
 Matrícula  (NivelAcesso)
 0000001	 	Admin
