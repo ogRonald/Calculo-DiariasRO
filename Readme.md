@@ -103,13 +103,9 @@ Inicialização Automática: Na primeira subida, o DatabaseInitializer cria auto
 Credenciais Padrão (Ambiente de Desenvolvimento)
 Todas as contas iniciais criadas pelo Seed utilizam a senha 123456:
 
-Matrícula	Senha	Órgão / Instituição	Perfil (NivelAcesso)
-0000001	123456	IPERON	Admin
-0000002	123456	Governadoria do Estado	Gestor
-0000003	123456	SEFIN	Gestor
-0000004	123456	IPERON	Operador
-0000005	123456	SESAU	Operador
-0000006	123456	SEDUC	Operador
+Matrícula  (NivelAcesso)
+0000001	 	Admin
+
 Estrutura da Base de Dados
 Tabela Usuarios
 Identificação: Id (uuid), Matricula, NomeCompleto, Orgao, Funcao, Email, Celular.
