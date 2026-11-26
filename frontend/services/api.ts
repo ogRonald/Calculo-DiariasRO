@@ -67,10 +67,12 @@ export async function obterPerfil(id: string) {
 
 export async function atualizarPerfil(id: string, payload: {
   nomeCompleto: string;
+  orgao?: string;
   funcao: string;
   email: string;
   celular: string;
-  senha?: string;
+  senha: string;
+  novaSenha?: string;
 }) {
   const response = await fetch(`${API_URL}/perfil/${id}`, {
     method: 'PUT',
@@ -244,6 +246,33 @@ export async function trocarSenhaObrigatoria(novaSenha: string) {
     method: 'POST',
     headers: getAuthHeaders(),
     body: JSON.stringify({ novaSenha }),
+  });
+  return tratarResposta(response);
+}
+
+export async function obterItemHistorico(id: string) {
+  const response = await fetch(`${API_URL}/historico/item/${id}`, {
+    method: 'GET',
+    headers: getAuthHeaders(),
+  });
+  return tratarResposta(response);
+}
+
+export async function corrigirHistorico(id: string, payload: {
+  nomeBeneficiario: string;
+  matriculaBeneficiario: string;
+  orgaoBeneficiario: string;
+  destino: string;
+  dataHoraInicio: string;
+  dataHoraFim: string;
+  totalDias: number;
+  valorUnitarioBrl: number;
+  valorTotalBrl: number;
+}) {
+  const response = await fetch(`${API_URL}/historico/${id}/corrigir`, {
+    method: 'PUT',
+    headers: getAuthHeaders(),
+    body: JSON.stringify(payload),
   });
   return tratarResposta(response);
 }

@@ -16,18 +16,20 @@ function PerfilContent() {
     orgao: '',
     funcao: '',
     email: '',
-    celular: ''
+    celular: '',
+    novaSenha: '',
+    confirmarNovaSenha: ''
   });
 
   const [usuario, setUsuario] = useState<any>(null);
   const [modoOnboarding, setModoOnboarding] = useState(false);
-  const [salvo, setSalvo] = useState(false);
+  const [mensagemSucesso, setMensagemSucesso] = useState('');
   const [erro, setErro] = useState('');
   const [autenticado, setAutenticado] = useState(false);
   const [carregandoDados, setCarregandoDados] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
 
-  // Estados para o Modal de Confirmação de Senha
+  // Estados para o Modal de Confirmação de Senha Atual
   const [showModal, setShowModal] = useState(false);
   const [senhaConfirmacao, setSenhaConfirmacao] = useState('');
 
@@ -48,20 +50,19 @@ function PerfilContent() {
         const u = JSON.parse(dadosUsuario!);
         setUsuario(u);
 
-        // Verifica se é primeiro acesso (dados obrigatórios ainda vazios e sem ?editar=true)
         const perfilIncompleto = !u.funcao || !u.email || !u.celular;
         setModoOnboarding(!paramEditar && perfilIncompleto);
 
-        setFormData({
+        setFormData((prev) => ({
+          ...prev,
           nomeCompleto: u.nomeCompleto || '',
           matricula: u.matricula || '',
           orgao: u.orgao || '',
           funcao: u.funcao || '',
           email: u.email || '',
           celular: u.celular || ''
-        });
+        }));
 
-        // Sincroniza com os dados mais recentes do banco via API
         if (u.id) {
           const perfilApi = await obterPerfil(u.id);
           if (perfilApi) {
@@ -73,7 +74,7 @@ function PerfilContent() {
               email: perfilApi.email ?? u.email ?? '',
               celular: perfilApi.celular ?? u.celular ?? ''
             };
-            setFormData(dadosAtualizados);
+            setFormData((prev) => ({ ...prev, ...dadosAtualizados }));
             setUsuario((prev: any) => ({ ...prev, ...dadosAtualizados }));
           }
         }
@@ -90,14 +91,31 @@ function PerfilContent() {
   const handleAbrirModal = (e: React.FormEvent) => {
     e.preventDefault();
     setErro('');
-    setSalvo(false);
+    setMensagemSucesso('');
+
+    // Valida os campos de nova senha apenas se o usuário preencheu algum deles
+    if (formData.novaSenha || formData.confirmarNovaSenha) {
+      if (formData.novaSenha.trim().length < 6) {
+        setErro('A nova senha deve ter no mínimo 6 caracteres.');
+        return;
+      }
+      if (formData.novaSenha !== formData.confirmarNovaSenha) {
+        setErro('A nova senha e a confirmação não conferem.');
+        return;
+      }
+      if (formData.novaSenha.trim() === 'SICADI@2026') {
+        setErro('Escolha uma nova senha diferente da senha temporária padrão.');
+        return;
+      }
+    }
+
     setSenhaConfirmacao('');
     setShowModal(true);
   };
 
   const confirmarSalvamento = async () => {
     if (!senhaConfirmacao) {
-      setErro('A senha é obrigatória para confirmar as alterações.');
+      setErro('A senha atual é obrigatória para confirmar as alterações.');
       setShowModal(false);
       return;
     }
@@ -107,12 +125,16 @@ function PerfilContent() {
     setIsLoading(true);
     setErro('');
     try {
+      const alterouSenha = Boolean(formData.novaSenha.trim());
+
       await atualizarPerfil(usuario.id, {
         nomeCompleto: formData.nomeCompleto.trim(),
+        orgao: formData.orgao.trim(),
         funcao: formData.funcao.trim(),
         email: formData.email.trim(),
         celular: formData.celular.trim(),
-        senha: senhaConfirmacao
+        senha: senhaConfirmacao,
+        ...(alterouSenha ? { novaSenha: formData.novaSenha.trim() } : {})
       });
 
       const usuarioAtualizado = {
@@ -130,7 +152,20 @@ function PerfilContent() {
         setUsuarioContext(usuarioAtualizado);
       }
 
-      setSalvo(true);
+      // Limpa os campos de nova senha após salvar com sucesso
+      setFormData((prev) => ({
+        ...prev,
+        novaSenha: '',
+        confirmarNovaSenha: ''
+      }));
+
+      setMensagemSucesso(
+        modoOnboarding
+          ? 'Perfil salvo com sucesso! Redirecionando...'
+          : alterouSenha
+          ? 'Dados cadastrais e senha atualizados com sucesso!'
+          : 'Dados cadastrais atualizados com sucesso!'
+      );
       setShowModal(false);
       setSenhaConfirmacao('');
 
@@ -140,7 +175,7 @@ function PerfilContent() {
         }, 1200);
       }
     } catch (err: any) {
-      setErro(err.message || 'Erro ao salvar. Verifique se a sua senha está correta.');
+      setErro(err.message || 'Erro ao salvar. Verifique se a sua senha atual está correta.');
       setShowModal(false);
     } finally {
       setIsLoading(false);
@@ -150,20 +185,20 @@ function PerfilContent() {
   if (!autenticado) return null;
 
   return (
-   <main className="relative min-h-screen flex items-center justify-center p-4 sm:p-8 text-slate-800 font-sans">
+    <main className="relative min-h-screen flex items-center justify-center p-4 sm:p-8 text-slate-800 font-sans">
       <div
         className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: "url('/background_login.jpg')" }}
       />
       <div className="absolute inset-0 z-0 bg-slate-900/60" />
 
-      {/* MODAL DE CONFIRMAÇÃO DE SENHA */}
+      {/* MODAL DE CONFIRMAÇÃO DE SENHA ATUAL */}
       {showModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
           <div className="bg-white rounded-xl shadow-2xl p-6 w-full max-w-sm border-t-4 border-[#0F2C59]">
             <h3 className="text-lg font-bold text-[#0F2C59] mb-1.5">Confirmar Identidade</h3>
             <p className="text-xs text-slate-600 mb-4 leading-relaxed">
-              Por questões de segurança, insira a sua senha atual para autorizar a atualização dos dados.
+              Por questões de segurança, insira a sua <strong>senha atual</strong> para autorizar {formData.novaSenha ? 'a alteração dos dados e da senha.' : 'a atualização dos dados.'}
             </p>
 
             <input
@@ -177,7 +212,7 @@ function PerfilContent() {
                 }
               }}
               className="w-full p-3 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-[#0F2C59] focus:outline-none mb-5"
-              placeholder="Digite sua senha..."
+              placeholder="Digite sua senha atual..."
               autoFocus
             />
 
@@ -212,12 +247,12 @@ function PerfilContent() {
             <p className="text-xs sm:text-sm text-slate-500 mt-1">
               {modoOnboarding
                 ? 'Para utilizar o SICADI, complete os seus dados institucionais.'
-                : 'Mantenha os seus dados funcionais e de contato atualizados.'}
+                : 'Mantenha os seus dados funcionais, de contato e senha atualizados.'}
             </p>
           </div>
-          {usuario?.role && (
+          {(usuario?.nivelAcesso || usuario?.role) && (
             <span className="text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-slate-100 text-slate-700 border border-slate-200">
-              {usuario.role}
+              {usuario.nivelAcesso || usuario.role}
             </span>
           )}
         </div>
@@ -228,11 +263,9 @@ function PerfilContent() {
           </div>
         )}
 
-        {salvo && (
+        {mensagemSucesso && (
           <div className="mb-5 p-3.5 bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs sm:text-sm font-medium rounded-lg text-center">
-            {modoOnboarding
-              ? 'Perfil salvo com sucesso! Redirecionando...'
-              : 'Dados cadastrais atualizados com sucesso!'}
+            {mensagemSucesso}
           </div>
         )}
 
@@ -321,6 +354,48 @@ function PerfilContent() {
                   placeholder="(69) 99999-9999"
                   className="w-full p-2.5 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-[#0F2C59] focus:outline-none"
                 />
+              </div>
+            </div>
+
+            {/* Seção Opcional de Troca de Senha */}
+            <div className="pt-4 mt-4 border-t border-slate-200">
+              <div className="mb-3">
+                <h2 className="text-xs font-bold text-[#0F2C59] uppercase tracking-wider">
+                  Alterar Senha de Acesso 
+                </h2>
+                <p className="text-xs text-slate-500 mt-0.5">
+                  Deixe em branco caso queira manter a sua senha atual.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-xs font-semibold text-slate-600 uppercase tracking-wider mb-1.5">
+                    Nova Senha
+                  </label>
+                  <input
+                    type="password"
+                    value={formData.novaSenha}
+                    onChange={(e) => setFormData({ ...formData, novaSenha: e.target.value })}
+                    placeholder="Mínimo 6 caracteres"
+                    autoComplete="new-password"
+                    className="w-full p-2.5 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-[#0F2C59] focus:outline-none"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-xs font-semibold text-slate-600 uppercase tracking-wider mb-1.5">
+                    Confirmar Nova Senha
+                  </label>
+                  <input
+                    type="password"
+                    value={formData.confirmarNovaSenha}
+                    onChange={(e) => setFormData({ ...formData, confirmarNovaSenha: e.target.value })}
+                    placeholder="Repita a nova senha"
+                    autoComplete="new-password"
+                    className="w-full p-2.5 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-[#0F2C59] focus:outline-none"
+                  />
+                </div>
               </div>
             </div>
 
