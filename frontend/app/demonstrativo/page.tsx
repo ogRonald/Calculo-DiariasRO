@@ -60,11 +60,11 @@ export default function DemonstrativoPage() {
         </div>
         <div className="bg-white border border-slate-200 p-6 rounded-xl shadow-sm">
           <p className="text-xs text-slate-500 mb-2 font-medium">Valor unitário base</p>
-          <p className="text-3xl font-bold text-slate-900">R$ {resultadoCalculo.valorUnitarioBaseBrl.toFixed(2)}</p>
+                    <p className="text-3xl font-bold text-slate-900">{resultadoCalculo.valorUnitarioBaseBrl.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</p>
         </div>
         <div className="bg-white border border-slate-200 p-6 rounded-xl shadow-sm">
           <p className="text-xs text-slate-500 mb-2 font-medium">Valor total estimado</p>
-          <p className="text-3xl font-bold text-slate-900">R$ {resultadoCalculo.valorTotalBrl.toFixed(2)}</p>
+              <p className="text-3xl font-bold text-slate-900">{resultadoCalculo.valorTotalBrl.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</p>
         </div>
       </div>
 

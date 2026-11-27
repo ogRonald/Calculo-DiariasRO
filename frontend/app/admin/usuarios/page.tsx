@@ -244,19 +244,19 @@ export default function AdminUsuariosPage() {
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
         <div className="bg-white border border-slate-200 p-4 rounded-xl shadow-xs">
           <p className="text-xs font-semibold text-slate-500 uppercase">Total Cadastrado</p>
-          <p className="text-2xl font-bold text-slate-900 mt-1">{contadores.total}</p>
+                    <p className="text-3xl font-bold text-slate-900 mt-1">{contadores.total}</p>
         </div>
         <div className="bg-white border border-slate-200 p-4 rounded-xl shadow-xs">
           <p className="text-xs font-semibold text-purple-600 uppercase">Administradores</p>
-          <p className="text-2xl font-bold text-slate-900 mt-1">{contadores.admins}</p>
+                    <p className="text-3xl font-bold text-slate-900 mt-1">{contadores.admins}</p>
         </div>
         <div className="bg-white border border-slate-200 p-4 rounded-xl shadow-xs">
           <p className="text-xs font-semibold text-emerald-600 uppercase">Gestores</p>
-          <p className="text-2xl font-bold text-slate-900 mt-1">{contadores.gestores}</p>
+                    <p className="text-3xl font-bold text-slate-900 mt-1">{contadores.gestores}</p>
         </div>
         <div className="bg-white border border-slate-200 p-4 rounded-xl shadow-xs">
           <p className="text-xs font-semibold text-slate-500 uppercase">Operadores</p>
-          <p className="text-2xl font-bold text-slate-900 mt-1">{contadores.operadores}</p>
+          <p className="text-3xl font-bold text-slate-900 mt-1">{contadores.operadores}</p>
         </div>
       </div>
 
@@ -357,14 +357,14 @@ export default function AdminUsuariosPage() {
                             </span>
                           )}
                         </div>
-                        <p className="text-xs text-slate-500">
+                                     <p className="text-xs text-slate-600">
                           Mat: {matricula} {email ? `• ${email}` : ''}
                         </p>
                       </td>
 
                       <td className="p-4 px-6">
                         <p className="font-medium text-slate-800">{orgao}</p>
-                        {funcao && <p className="text-xs text-slate-500">{funcao}</p>}
+                              {funcao && <p className="text-xs text-slate-600">{funcao}</p>}
                       </td>
 
                       <td className="p-4 px-6 whitespace-nowrap">
