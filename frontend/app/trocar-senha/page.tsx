@@ -58,8 +58,14 @@ export default function TrocarSenhaObrigatoriaPage() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-900 flex items-center justify-center p-4">
-      <div className="bg-white rounded-2xl shadow-xl max-w-md w-full p-8 border border-slate-200">
+    <div className="relative min-h-screen flex items-center justify-center p-4">
+      <div
+        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: "url('/background_login.jpg')" }}
+      />
+      <div className="absolute inset-0 z-0 bg-slate-900/60" />
+
+      <div className="relative z-10 bg-white rounded-2xl shadow-xl max-w-md w-full p-8 border border-slate-200 border-t-4 border-t-[#0F2C59]">
         <div className="mb-6">
           <span className="inline-block bg-amber-100 text-amber-800 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-3">
             Ação Obrigatória
