@@ -240,7 +240,7 @@ export default function DashboardGestao() {
               <span className="text-xs font-semibold text-slate-500 uppercase tracking-wider">Aprovadas</span>
               <span className="text-[10px] bg-emerald-50 text-emerald-700 px-2 py-0.5 rounded font-bold">Autorizado</span>
             </div>
-            <p className="text-3xl font-black text-slate-900 mt-2">
+                        <p className="text-4xl font-black text-slate-900 mt-2">
               {metricas.qtdAprovadas < 10 ? `0${metricas.qtdAprovadas}` : metricas.qtdAprovadas}
             </p>
             <div className="mt-3 pt-3 border-t border-slate-100 flex items-baseline justify-between">
@@ -257,7 +257,7 @@ export default function DashboardGestao() {
               <span className="text-xs font-semibold text-slate-500 uppercase tracking-wider">Em Análise</span>
               <span className="text-[10px] bg-amber-50 text-amber-700 px-2 py-0.5 rounded font-bold">Pendente</span>
             </div>
-            <p className="text-3xl font-black text-slate-900 mt-2">
+                        <p className="text-4xl font-black text-slate-900 mt-2">
               {metricas.qtdPendentes < 10 ? `0${metricas.qtdPendentes}` : metricas.qtdPendentes}
             </p>
             <div className="mt-3 pt-3 border-t border-slate-100 flex items-baseline justify-between">
@@ -274,7 +274,7 @@ export default function DashboardGestao() {
               <span className="text-xs font-semibold text-slate-500 uppercase tracking-wider">Devolvidas</span>
               <span className="text-[10px] bg-blue-50 text-blue-700 px-2 py-0.5 rounded font-bold">Correção</span>
             </div>
-            <p className="text-3xl font-black text-slate-900 mt-2">
+                        <p className="text-4xl font-black text-slate-900 mt-2">
               {metricas.qtdDevolvidas < 10 ? `0${metricas.qtdDevolvidas}` : metricas.qtdDevolvidas}
             </p>
             <div className="mt-3 pt-3 border-t border-slate-100 flex items-baseline justify-between">
@@ -291,7 +291,7 @@ export default function DashboardGestao() {
               <span className="text-xs font-semibold text-slate-500 uppercase tracking-wider">Recusadas</span>
               <span className="text-[10px] bg-rose-50 text-rose-700 px-2 py-0.5 rounded font-bold">Negado</span>
             </div>
-            <p className="text-3xl font-black text-slate-900 mt-2">
+                        <p className="text-4xl font-black text-slate-900 mt-2">
               {metricas.qtdRejeitadas < 10 ? `0${metricas.qtdRejeitadas}` : metricas.qtdRejeitadas}
             </p>
             <div className="mt-3 pt-3 border-t border-slate-100 flex items-baseline justify-between">

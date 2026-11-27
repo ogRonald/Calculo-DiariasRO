@@ -245,7 +245,7 @@ export default function HistoricoPage() {
         <div className="overflow-x-auto">
           <table className="w-full text-left border-collapse">
             <thead>
-              <tr className="bg-slate-50 text-xs text-slate-500 uppercase font-semibold border-b border-slate-200">
+                <tr className="bg-slate-50 text-xs text-slate-700 uppercase font-semibold border-b border-slate-200">
                 <th className="p-4 px-6">Beneficiário (Viajante)</th>
                 <th className="p-4 px-6">Solicitante</th>
                 <th className="p-4 px-6">Destino</th>
@@ -262,7 +262,7 @@ export default function HistoricoPage() {
                 </tr>
               ) : historico.length === 0 ? (
                 <tr>
-                  <td colSpan={7} className="p-8 text-center text-slate-500">Nenhum cálculo registrado até o momento.</td>
+                  <td colSpan={7} className="p-12 text-center text-slate-600 font-medium">Nenhum cálculo registrado até o momento.</td>
                 </tr>
               ) : (
                 historico.map((item) => {
@@ -306,7 +306,7 @@ export default function HistoricoPage() {
                     <tr key={idItem} className="hover:bg-slate-50/80 transition-colors">
                       <td className="p-4 px-6">
                         <p className="font-semibold text-slate-900">{nomeBeneficiario}</p>
-                        <p className="text-xs text-slate-400">
+                        <p className="text-xs text-slate-600">
                           {matriculaBeneficiario ? `Mat: ${matriculaBeneficiario}` : ''}
                           {matriculaBeneficiario && orgaoBeneficiario ? ' • ' : ''}
                           {orgaoBeneficiario}

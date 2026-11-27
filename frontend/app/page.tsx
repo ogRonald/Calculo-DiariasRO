@@ -87,7 +87,7 @@ export default function NovaSimulacaoPage() {
 
   return (
     <div className="p-8 max-w-5xl mx-auto w-full text-slate-800 font-sans">
-      <div className="mb-8">
+            <div className="hidden">
          
         <p className="text-slate-500"></p>
       </div>
@@ -103,7 +103,7 @@ export default function NovaSimulacaoPage() {
           <div className="flex items-center gap-3 mb-6">
             
             <div>
-              <h3 className="font-bold text-slate-900">Dados do beneficiário</h3>
+              <h3 className="text-lg font-bold text-slate-900">Dados do beneficiário</h3>
               <p className="text-xs text-slate-500">Identifique o servidor que receberá as diárias.</p>
             </div>
           </div>
@@ -127,7 +127,7 @@ export default function NovaSimulacaoPage() {
           <div className="flex items-center gap-3 mb-6">
             
             <div>
-              <h3 className="font-bold text-slate-900">Informações da viagem</h3>
+              <h3 className="text-lg font-bold text-slate-900">Informações da viagem</h3>
               <p className="text-xs text-slate-500">Configure período, destino e categoria do servidor.</p>
             </div>
           </div>
@@ -170,7 +170,7 @@ export default function NovaSimulacaoPage() {
           <div className="flex items-center gap-3 mb-6">
             
             <div>
-              <h3 className="font-bold text-slate-900">Regras e condições</h3>
+              <h3 className="text-lg font-bold text-slate-900">Regras e condições</h3>
               <p className="text-xs text-slate-500">Verifique as condições antes de gerar sua simulação.</p>
             </div>
           </div>
